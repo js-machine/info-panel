@@ -1,2 +1,1 @@
-# info-panel
-Info Panel for Mogilev
+Инфо панель для Могилева

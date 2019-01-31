@@ -1,0 +1,21 @@
+.info-panel {
+  display: grid;
+  height: 100%;
+
+  color: white;
+
+  grid-template-rows: 10% 25% auto 25% 10%;
+
+  background: url(../../../assets/background.jpg) no-repeat center fixed;
+  background-size: cover;
+
+  .title {
+    color: white;
+    margin:0;
+    padding:50px 20px;
+  }
+
+  & > div {
+   border: 1px solid red;
+  }
+}
