@@ -1,6 +1,6 @@
 import {WeatherModel} from "../model/weather.model";
 
-export function toModel(dto: any): WeatherModel {
+export function weatherDtoToModel(dto: any): WeatherModel {
 
   const main = dto["main"];
   const sys = dto["sys"];
@@ -28,3 +28,23 @@ export function toModel(dto: any): WeatherModel {
   return model;
 }
 
+export function forecastDtoToModel(dto: any): WeatherModel {
+  const list = dto["list"];
+  const models = list.map((item) => {
+    const temp = item["temp"];
+    const weather = item["weather"];
+
+    return {
+      date: new Date(item["dt"]),
+      temperature: {
+        day: temp["day"],
+        night: temp["night"]
+      },
+      weather: {
+        icon: weather["icon"]
+      }
+    }
+  });
+
+  return models;
+}
