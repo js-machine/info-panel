@@ -1,0 +1,13 @@
+<div class="weather-forecast">
+  <div class="weather-forecast__label">
+    <div>На нядзелю</div>
+  </div>
+  <div class="weather-forecast__day forecast-day">
+    <div class="forecast-day__icon" *ngFor="let item of forecast">
+      <div>
+        <img [src]="getIconUrl(item?.weather.icon)"/>
+      </div>
+      <div class="forecast-day__temperature">{{item.temperature.day}}</div>
+    </div>
+  </div>
+</div>

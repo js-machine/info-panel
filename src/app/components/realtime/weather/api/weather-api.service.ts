@@ -27,7 +27,7 @@ export class WeatherApiService {
     );
   }
 
-  getForeacast(): Observable<ForecastModel | null> {
+  getForecast(): Observable<Array<ForecastModel>  | null> {
     return this.httpClient.jsonp(`${this.API_URL}/data/2.5/forecast/daily?id=${this.CITY_ID}&units=metric&APPID=${this.APP_ID}`, "callback").pipe(
       map(forecastDto => forecastDtoToModel(forecastDto)),
       catchError(() => {
@@ -35,5 +35,10 @@ export class WeatherApiService {
         return of(null);
       })
     );
+  }
+
+  getIconUrl(icon: string): string {
+    const url = `http://openweathermap.org/img/w/${icon}.png`;
+    return url;
   }
 }

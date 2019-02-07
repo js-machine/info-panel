@@ -1,0 +1,9 @@
+<div class="weather-now">
+  <div>Сення</div>
+  <div class="weather-now__data">
+    <div class="now-data__icon">
+      <img [src]="getIconUrl(weather?.weather.icon)"/>
+    </div>
+    <div class="now-data__temperature">{{weather?.main.temp}}</div>
+  </div>
+</div>

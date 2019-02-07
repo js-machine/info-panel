@@ -1,0 +1,12 @@
+.weather-forecast {
+  display: flex;
+}
+
+.weather-forecast__day {
+  display: flex;
+  flex: 1;
+  justify-content: space-around;
+}
+.forecast-day__temperature {
+  text-align: center;
+}

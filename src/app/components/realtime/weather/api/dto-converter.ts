@@ -10,6 +10,7 @@ export function weatherDtoToModel(dto: any): WeatherModel {
   const model = {
     main: {
       pressure: main["pressure"],
+      temp: main["temp"],
       humidity: main["humidity"],
     },
     sys: {
@@ -28,16 +29,16 @@ export function weatherDtoToModel(dto: any): WeatherModel {
   return model;
 }
 
-export function forecastDtoToModel(dto: any): WeatherModel {
+export function forecastDtoToModel(dto: any): Array<WeatherModel> {
   const list = dto["list"];
   const models = list.map((item) => {
     const temp = item["temp"];
-    const weather = item["weather"];
+    const weather = item["weather"][0];
 
     return {
       date: new Date(item["dt"]),
       temperature: {
-        day: temp["day"],
+        day: Math.round(temp["day"]),
         night: temp["night"]
       },
       weather: {

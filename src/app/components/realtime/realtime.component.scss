@@ -1,0 +1,31 @@
+.realtime-time {
+  display: flex;
+  justify-content: space-around;
+  text-transform: uppercase;
+  font: 1.6rem RobotoBold;
+  line-height: 1.6rem;
+  background-color: #05B2DC;
+  padding: 5px;
+}
+
+.realtime-other {
+  display: flex;
+  background-color: #087CA7;
+  font: 1.6rem RobotoBold;
+}
+
+.realtime-other__weather-now {
+  width: 200px;
+}
+
+.realtime-other__weather-forecast {
+  flex: 1;
+}
+
+.realtime-other__currency {
+  width: 200px;
+}
+
+.realtime-other > div {
+  border: 1px solid #05B2DC;
+}

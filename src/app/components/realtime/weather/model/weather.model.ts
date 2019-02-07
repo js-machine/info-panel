@@ -1,6 +1,7 @@
 export interface WeatherModel {
   main: {
     pressure: number,
+    temp: number,
     humidity: number
   },
   sys: {
