@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {CurrencyApiService} from "./api/currency-api.service";
+import {CurrencyModel} from "./model/currency.model";
 
 @Component({
   selector: 'info-currency',
@@ -7,9 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CurrencyComponent implements OnInit {
 
-  constructor() { }
+  readonly ASSETS_PATH = "../../../../assets/";
 
-  ngOnInit() {
+  private mapping: any;
+
+  constructor(private api: CurrencyApiService) {
+    this.mapping = {
+      "USD": "usa",
+      "EUR": "eu",
+      "RUB": "rus"
+    };
   }
 
+  currencies: Array<CurrencyModel>;
+
+  ngOnInit() {
+    this.api.getCurrency().subscribe((values) => {
+      this.currencies = values;
+    })
+  }
+
+  getImagePath(currency: CurrencyModel): string {
+    const image = this.mapping[currency.code];
+    return `${this.ASSETS_PATH}/${image}.png`;
+  }
 }

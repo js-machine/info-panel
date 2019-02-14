@@ -1,3 +1,20 @@
+.currency-container {
+  padding-top: 10px;
+}
+
 .currency {
-  border: 1px solid #05B2DC;
+  display: flex;
+  text-align: center;
+}
+
+.currency__flag {
+  flex: 1;
+  img {
+    width: 50px;
+    height: 30px;
+  }
+}
+
+.currency__rate {
+  flex: 1
 }

@@ -1,1 +1,8 @@
-Currency
+<div class="currency-container">
+  <div class="currency" *ngFor="let currency of currencies">
+      <div class="currency__flag">
+        <img [src]="getImagePath(currency)">
+      </div>
+      <div class="currency__rate">{{currency.rate | number:".2-2"}}</div>
+  </div>
+</div>
