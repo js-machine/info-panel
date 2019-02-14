@@ -1,7 +1,13 @@
-.weather-now {
-  display: flex;
+.weather-now__label {
+  text-align: center;
+  padding-top: 0.5rem;
 }
 
 .now-data__temperature {
+  text-align: center;
+  margin-top: -0.5rem;
+}
+
+.now-data__icon {
   text-align: center;
 }
