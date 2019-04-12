@@ -1,0 +1,13 @@
+<div class="weather-now">
+  <div class="weather-now__data weather-data">
+    <div class="weather-data__temperature now-temperature">
+      <span class="now-temperature__value">{{weather?.main.temp}} °C</span>
+      <span class="now-temperature__icon">
+        <img [src]="getIconUrl(weather?.weather.icon)"/>
+      </span>
+    </div>
+    <div class="weather-data__pressure">{{weather?.main.pressure}} мм.рт.ст.</div>
+    <div class="weather-data__humidity">{{weather?.main.humidity}} %</div>
+    <div class="weather-data__wind">{{weather?.wind.speed | number:"1.0-0"}} м/с</div>
+  </div>
+</div>

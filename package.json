@@ -34,7 +34,10 @@
     "electron:mac": "npm run build:prod && electron-builder build --mac",
     "version": "conventional-changelog -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md"
   },
-  "dependencies": {},
+  "dependencies": {
+    "angular-instafeed": "^1.8.3",
+    "instafeed.js": "^1.4.1"
+  },
   "devDependencies": {
     "@angular-devkit/build-angular": "0.11.4",
     "@angular/cli": "7.1.4",

@@ -1,18 +1,5 @@
-<div class="realtime-container">
-  <div class="realtime-time">
-    <span>{{currentDate}}</span>
-    <span>Магілёў</span>
-    <span>{{currentTime}}</span>
-  </div>
-  <div class="realtime-other">
-    <div class="realtime-other__weather-now">
-     <info-weather-now></info-weather-now>
-    </div>
-    <div class="realtime-other__weather-forecast">
-     <info-weather-forecast></info-weather-forecast>
-    </div>
-    <div class="realtime-other__currency">
-     <info-currency></info-currency>
-    </div>
-  </div>
+<div class="realtime">
+  <div class="realtime__date">{{now$ | async | date:" dd:MMMM" }}</div>
+  <div class="realtime__time">{{now$ | async | date:"HH:mm:ss" }}</div>
+  <div class="realtime__day-of-week">{{now$ | async | date:"EEEE" }}</div>
 </div>

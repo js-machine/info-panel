@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {map} from "rxjs/operators";
+import {interval, Observable} from "rxjs";
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  now$: Observable<Date>;
 
   ngOnInit() {
+    this.now$ = interval(1000).pipe(map(() => new Date()));
   }
-
 }
