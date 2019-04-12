@@ -1,20 +1,7 @@
-.info-panel {
-  display: grid;
-  height: 100%;
-
-  color: white;
-
-  grid-template-rows: 1fr 2fr 6fr 2fr 1fr;
-
+.home-page {
+  background: url("./../../../assets/city.png");
   background-size: cover;
-
-  .title {
-    color: white;
-    margin:0;
-    padding:50px 20px;
-  }
-
-  & > div {
-   border: 1px solid red;
-  }
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
 }
