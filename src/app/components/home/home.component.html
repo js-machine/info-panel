@@ -1,5 +1,15 @@
 <div class="home-page">
-  <div class="home-page__city">Могилёв</div>
-  <info-realtime></info-realtime>
-  <info-weather-now></info-weather-now>
+  <div class="home-page__info home-info">
+    <div class="home-info__city">Могилёв</div>
+    <info-realtime></info-realtime>
+    <info-weather-now></info-weather-now>
+  </div>
+  <div class="home-page__controls page-controls">
+    <div class="page-controls__apps" (click)="goToAppList()">
+        <i class="material-icons">apps</i>
+    </div>
+    <div class="page-controls__back">
+      <i class="material-icons">arrow_back</i>
+    </div>
+  </div>
 </div>

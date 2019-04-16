@@ -12,18 +12,24 @@ import {RealtimeModule} from "./components/realtime/realtime.module";
 import localeRu from '@angular/common/locales/ru';
 import {registerLocaleData} from "@angular/common";
 import {WeatherModule} from "./components/weather/weather.module";
+import {MatIconModule} from '@angular/material/icon';
+import {MatGridListModule} from '@angular/material';
+import {AppListComponent} from "./components/app-list/app-list.component";
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    AppListComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     RealtimeModule,
-    WeatherModule
+    WeatherModule,
+    MatIconModule,
+    MatGridListModule
   ],
   providers: [{provide: LOCALE_ID, useValue: 'ru'}],
   bootstrap: [AppComponent]

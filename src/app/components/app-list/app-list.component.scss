@@ -1,0 +1,45 @@
+.app-list {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+
+.app-list__panel {
+  flex: 1;
+}
+
+.app-list__controls {
+  border: 0.1rem solid gray;
+  height: 8rem;
+  display: flex;
+  flex-grow: 0;
+  justify-content: center;
+  padding: 1rem 0rem;
+
+  i {
+    padding: 0rem 2rem;
+    font-size: 8rem;
+    cursor: pointer;
+  }
+}
+
+.app-list__panel {
+  display: grid;
+  grid-template-columns: 50% 50%;
+
+  & > div {
+    font-size: 4rem;
+    font-family: "Roboto Regular";
+    border: 1px solid gray;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    display: flex;
+  }
+
+  i {
+    padding: 0rem 2rem;
+    font-size: 8rem;
+    cursor: pointer;
+  }
+}

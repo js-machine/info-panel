@@ -1,35 +1,17 @@
-.realtime-container {
-  height: 100%;
+.realtime {
+  text-align: center;
+  font-family: "Roboto Regular";
 }
 
-.realtime-time {
-  display: flex;
-  justify-content: space-around;
-  text-transform: uppercase;
-  font: 1.6rem RobotoBold;
-  line-height: 1.6rem;
-  background-color: #05B2DC;
-  padding: 5px;
+.realtime__time {
+  font-size: 7rem;
+  padding: 0.5rem 0rem;
 }
 
-.realtime-other {
-  display: flex;
-  background-color: #087CA7;
-  font: 1.6rem RobotoBold;
+.realtime__date {
+  font-size: 4rem;
 }
 
-.realtime-other__weather-now {
-  width: 200px;
-}
-
-.realtime-other__weather-forecast {
-  flex: 1;
-}
-
-.realtime-other__currency {
-  width: 200px;
-}
-
-.realtime-other > div {
-  border: 1px solid #05B2DC;
+.realtime__day-of-week {
+  font-size: 2rem;
 }
