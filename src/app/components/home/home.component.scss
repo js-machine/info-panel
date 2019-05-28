@@ -4,6 +4,10 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  background-color: #659DBD;
+  color: white;
+  overflow: hidden;
+  font-family: Roboto Regular;
 }
 
 .home-page__info {
@@ -12,21 +16,20 @@
 
 .home-info__city {
   text-align: center;
-  font-family: Roboto Regular;
   font-size: 7rem;
   margin-bottom: 0.5rem;
 }
 
 .home-page::after {
-  content: "";
-  background: url("./../../../assets/city.png");
-  opacity: 0.5;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;
+  //content: "";
+  //background: url("./../../../assets/city.png");
+  //opacity: 0.5;
+  //top: 0;
+  //left: 0;
+  //bottom: 0;
+  //right: 0;
+  //position: absolute;
+  //z-index: -1;
 }
 
 .home-page__controls {
@@ -42,4 +45,9 @@
     font-size: 8rem;
     cursor: pointer;
   }
+}
+
+.video-player {
+  flex: 1;
+  overflow: hidden;
 }

@@ -16,7 +16,7 @@
 .weather-now {
   text-align: center;
   font-family: "Roboto Regular";
-  font-size: 2rem;
+  font-size: 6rem;
 }
 
 .weather-now__data > div {
@@ -25,5 +25,5 @@
 
 .now-temperature__icon {
   position: relative;
-  top: 0.8rem;
+  left: 1rem;
 }
