@@ -15,6 +15,10 @@ import {WeatherModule} from "./components/weather/weather.module";
 import {MatIconModule} from '@angular/material/icon';
 import {MatGridListModule} from '@angular/material';
 import {AppListComponent} from "./components/app-list/app-list.component";
+import {VgCoreModule} from "videogular2/core";
+import {VgControlsModule} from "videogular2/controls";
+import {VgOverlayPlayModule} from "videogular2/overlay-play";
+import {VgBufferingModule} from "videogular2/buffering";
 
 @NgModule({
   declarations: [
@@ -29,7 +33,11 @@ import {AppListComponent} from "./components/app-list/app-list.component";
     RealtimeModule,
     WeatherModule,
     MatIconModule,
-    MatGridListModule
+    MatGridListModule,
+    VgCoreModule,
+    VgControlsModule,
+    VgOverlayPlayModule,
+    VgBufferingModule
   ],
   providers: [{provide: LOCALE_ID, useValue: 'ru'}],
   bootstrap: [AppComponent]
