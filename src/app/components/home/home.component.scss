@@ -52,6 +52,16 @@
   overflow: hidden;
 }
 
+.home-page__logo {
+  display: flex;
+
+  & > div {
+    flex: 1;
+    text-align: center;
+    font-size: 3rem;
+  }
+}
+
 .page-controls__space, .page-controls__mirror {
   flex: 1;
 }
