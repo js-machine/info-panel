@@ -34,7 +34,7 @@
 
 .home-page__controls {
   border: 0.1rem solid gray;
-  height: 8rem;
+  height: 13%;
   display: flex;
   flex-grow: 0;
   justify-content: center;
@@ -42,7 +42,7 @@
 
   i {
     padding: 0rem 2rem;
-    font-size: 8rem;
+    font-size: 16rem;
     cursor: pointer;
   }
 }
@@ -54,13 +54,15 @@
 
 .home-page__logo {
   display: flex;
-
+  align-items: center;
+  justify-content: space-around;
+  height: 15%;
   & > div {
     flex: 1;
     text-align: center;
     font-size: 3rem;
   }
-}
+ }
 
 .page-controls__space, .page-controls__mirror {
   flex: 1;
