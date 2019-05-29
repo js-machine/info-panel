@@ -1,11 +1,11 @@
-<div class="home-page" (window:keydown.h)="goToHome()">
+<div class="home-page" (window:keydown.l)="goToAppList()">
   <div class="home-page__info home-info">
     <div class="home-info__city">Могилёв</div>
     <info-realtime></info-realtime>
     <info-weather-now></info-weather-now>
     <div class="home-page__info video-player">
         <vg-player>
-          <video [vgMedia]="media" #media id="singleVideo" preload="auto" autoplay>
+          <video [vgMedia]="media" #media id="singleVideo" preload="auto" autoplay="true" loop="true">
             <source src="http://static.videogular.com/assets/videos/videogular.mp4" type="video/mp4">
           </video>
         </vg-player>
