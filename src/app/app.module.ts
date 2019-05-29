@@ -14,6 +14,7 @@ import {MatGridListModule} from '@angular/material';
 import {AppListComponent} from "./components/app-list/app-list.component";
 
 import {HomeModule} from "./components/home/home.module";
+import {ForecastModule} from "./components/forecast/forecast.module";
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import {HomeModule} from "./components/home/home.module";
     FormsModule,
     AppRoutingModule,
     HomeModule,
+    ForecastModule,
     MatIconModule,
     MatGridListModule
   ],

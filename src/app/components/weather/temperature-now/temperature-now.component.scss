@@ -1,4 +1,4 @@
-.weather-now {
+.weather {
   margin-top: 2rem;
 }
 
@@ -13,17 +13,17 @@
   }
 }
 
-.weather-now {
+.weather {
   text-align: center;
   font-family: "Roboto Regular";
-  font-size: 5rem;
+  font-size: 6rem;
 }
 
-.weather-now__data > div {
+.weather__data > div {
   padding: 1rem 0rem;
 }
 
-.now-temperature__icon {
+.temperature__icon {
   position: relative;
   left: 1rem;
 }

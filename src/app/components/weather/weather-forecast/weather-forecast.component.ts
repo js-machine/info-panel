@@ -5,7 +5,7 @@ import {ForecastModel} from "../model/forecast.model";
 @Component({
   selector: 'info-weather-forecast',
   templateUrl: './weather-forecast.component.html',
-  styleUrls: ['./weather-forecast.component.scss','../../home/home.component.scss','../weather-now/weather-now.component.scss']
+  styleUrls: ['./weather-forecast.component.scss']
 })
 export class WeatherForecastComponent implements OnInit {
 

@@ -1,0 +1,10 @@
+<div class="weather">
+  <div class="weather__data weather-data">
+    <div class="weather-data__temperature now-temperature">
+      <span class="temperature__value">{{weather?.main.temp  | number:"1.0-0"}} °C</span>
+      <span class="temperature__icon" >
+        <img [src]="getIconUrl(weather?.weather.icon)" />
+      </span>
+    </div>
+  </div>
+</div>

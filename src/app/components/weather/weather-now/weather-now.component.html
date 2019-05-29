@@ -2,22 +2,22 @@
   <div class="weather-now__data weather-data">
     <div class="weather-data__temperature now-temperature">
       <span class="now-temperature__value">{{weather?.main.temp  | number:"1.0-0"}} °C</span>
-      <span class="now-temperature__icon">
-        <img [src]="getIconUrl(weather?.weather.icon)"/>
+      <span class="now-temperature__icon" >
+        <img [src]="getIconUrl(weather?.weather.icon)" />
       </span>
     </div>
-<!--    <div class="weather-data__pressure">{{weather?.main.pressure}} мм.рт.ст.</div>-->
-<!--    <div class="weather-data__humidity">{{weather?.main.humidity}} %</div>-->
-<!--    <div class="weather-data__wind">{{weather?.wind.speed | number:"1.0-0"}} м/с</div>-->
-<!--    <div class="weather-data__sys">-->
-<!--      <div class="weather-data__sunrise">-->
-<!--        <img src="../../../../assets/sunrise.png"/>-->
-<!--        <div>{{weather?.sys.sunrise | date:"HH:mm" }}</div>-->
-<!--      </div>-->
-<!--      <div class="weather-data__sunset">-->
-<!--        <img src="../../../../assets/sunset.png"/>-->
-<!--        <div>{{weather?.sys.sunrise | date:"HH:mm" }}</div>-->
-<!--      </div>-->
-<!--    </div>-->
+   <div class="weather-data__pressure">{{weather?.main.pressure}} мм.рт.ст.</div>
+   <div class="weather-data__humidity">{{weather?.main.humidity}} %</div>
+   <div class="weather-data__wind">{{weather?.wind.speed | number:"1.0-0"}} м/с</div>
+   <div class="weather-data__sys">
+     <div class="weather-data__sunrise">
+       <img src="../../../../assets/sunrise.png"/>
+       <div>{{weather?.sys.sunrise | date:"HH:mm" }}</div>
+     </div>
+     <div class="weather-data__sunset">
+       <img src="../../../../assets/sunset.png"/>
+       <div>{{weather?.sys.sunset | date:"HH:mm" }}</div>
+     </div>
+   </div>
   </div>
 </div>

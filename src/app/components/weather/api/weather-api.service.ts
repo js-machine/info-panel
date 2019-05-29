@@ -28,7 +28,7 @@ export class WeatherApiService {
   }
 
   getForecast(): Observable<Array<ForecastModel>  | null> {
-    return this.httpClient.jsonp(`${this.API_URL}/data/2.5/forecast/daily?id=${this.CITY_ID}&units=metric&APPID=${this.APP_ID}`, "callback").pipe(
+    return this.httpClient.jsonp(`${this.API_URL}/data/2.5/forecast/daily?id=${this.CITY_ID}&units=metric&APPID=${this.APP_ID}&cnt=5`, "callback").pipe(
       map(forecastDto => forecastDtoToModel(forecastDto)),
       catchError(() => {
         console.log("Forecast loading failed!");
