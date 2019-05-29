@@ -18,10 +18,6 @@ export class HomeComponent implements OnInit {
     this.now$ = interval(1000).pipe(map(() => new Date()));
   }
 
-  autoPolay(video) {
-    video.play();
-  }
-
   goToAppList(): void {
     this.router.navigate(['/apps']);
   }

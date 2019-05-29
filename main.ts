@@ -16,7 +16,9 @@ function createWindow() {
     x: 0,
     y: 0,
     width: size.width,
-    height: size.height
+    height: size.height,
+    // frame: false,
+    // kiosk: true
   });
 
   if (serve) {
@@ -46,6 +48,7 @@ function createWindow() {
 
 try {
 
+  app.commandLine.appendSwitch('autoplay-policy', 'no-user-gesture-required');
   // This method will be called when Electron has finished
   // initialization and is ready to create browser windows.
   // Some APIs can only be used after this event occurs.

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {WeatherApiService} from "../api/weather-api.service";
 import {ForecastModel} from "../model/forecast.model";
-import {Router} from "@angular/router";
 
 @Component({
   selector: 'info-weather-forecast',
@@ -24,10 +23,4 @@ export class WeatherForecastComponent implements OnInit {
     const url = this.api.getIconUrl(icon);
     return url;
   }
-
-  //FixMe
-  
-  // goToAppList(): void {
-  //   this.router.navigate(['/apps']);
-  // }
 }

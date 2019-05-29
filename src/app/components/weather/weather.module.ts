@@ -15,6 +15,7 @@ import {WeatherForecastComponent} from "../weather/weather-forecast/weather-fore
     CommonModule
   ],
   exports: [
+    
     WeatherNowComponent,
     WeatherForecastComponent
   ]
