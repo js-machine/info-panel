@@ -25,9 +25,6 @@ export function weatherDtoToModel(dto: any): WeatherModel {
       degree: wind["degree"]
     }
   };
-  console.log(model);
-  console.log(sys["sunrise"]);
-  console.log(sys["sunset"]);
   return model;
 }
 
