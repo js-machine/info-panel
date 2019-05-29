@@ -12,4 +12,8 @@ export class AppListComponent {
   goToHome(): void {
     this.router.navigate(['/']);
   }
+
+  goToForecast(): void {
+    this.router.navigate(['/forecast']);
+  }
 }

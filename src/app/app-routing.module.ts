@@ -2,6 +2,7 @@ import {HomeComponent} from './components/home/home.component';
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import {AppListComponent} from "./components/app-list/app-list.component";
+import {WeatherForecastComponent} from "./components//weather/weather-forecast/weather-forecast.component";
 
 const routes: Routes = [
   {
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path: 'apps',
     component: AppListComponent
+  },
+  {
+    path: 'forecast',
+    component: WeatherForecastComponent
   }
 ];
 

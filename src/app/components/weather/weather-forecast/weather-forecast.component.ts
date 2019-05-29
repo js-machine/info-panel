@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import {WeatherApiService} from "../api/weather-api.service";
 import {ForecastModel} from "../model/forecast.model";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'info-weather-forecast',
   templateUrl: './weather-forecast.component.html',
-  styleUrls: ['./weather-forecast.component.scss']
+  styleUrls: ['./weather-forecast.component.scss','../../home/home.component.scss','../weather-now/weather-now.component.scss']
 })
 export class WeatherForecastComponent implements OnInit {
 
@@ -23,4 +24,10 @@ export class WeatherForecastComponent implements OnInit {
     const url = this.api.getIconUrl(icon);
     return url;
   }
+
+  //FixMe
+  
+  // goToAppList(): void {
+  //   this.router.navigate(['/apps']);
+  // }
 }
