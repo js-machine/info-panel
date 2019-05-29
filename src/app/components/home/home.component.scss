@@ -4,8 +4,6 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  background-color: #659DBD;
-  color: white;
   overflow: hidden;
   font-family: Roboto Regular;
 }
@@ -21,19 +19,19 @@
 }
 
 .home-page::after {
-  //content: "";
-  //background: url("./../../../assets/city.png");
-  //opacity: 0.5;
-  //top: 0;
-  //left: 0;
-  //bottom: 0;
-  //right: 0;
-  //position: absolute;
-  //z-index: -1;
+  content: "";
+  background: url("/assets/city.png");
+  opacity: 0.1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
 }
 
 .home-page__controls {
-  border: 0.1rem solid gray;
+  border-top: 0.1rem solid gray;
   height: 13%;
   display: flex;
   flex-grow: 0;
@@ -63,6 +61,10 @@
     font-size: 3rem;
   }
  }
+
+.home-page__logoImg{
+  transform: scale(1.5,1.5);
+}
 
 .page-controls__space, .page-controls__mirror {
   flex: 1;

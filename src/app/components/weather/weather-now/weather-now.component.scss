@@ -25,5 +25,9 @@
 
 .now-temperature__icon {
   position: relative;
-  left: 1rem;
+  left: 2rem;
+}
+
+.weather-now__iconImg {
+  transform: scale(2,2);
 }

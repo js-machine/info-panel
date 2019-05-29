@@ -2,26 +2,22 @@
   display: flex;
   height: 100%;
   flex-direction: column;
-  background-color: #659DBD;
+}
+
+.app-list::after {
+  content: "";
+  background: url("/assets/city.png");
+  opacity: 0.1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
 }
 
 .app-list__panel {
   flex: 1;
-}
-
-.app-list__controls {
-  border: 0.1rem solid gray;
-  height: 13%;
-  display: flex;
-  flex-grow: 0;
-  justify-content: center;
-  padding: 1rem 0rem;
-
-  i {
-    padding: 0rem 2rem;
-    font-size: 16rem;
-    cursor: pointer;
-  }
 }
 
 .app-list__panel {
@@ -40,7 +36,7 @@
 
   i {
     padding: 0rem 2rem;
-    font-size: 8rem;
+    font-size: 10rem;
     cursor: pointer;
   }
 }

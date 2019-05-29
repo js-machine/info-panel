@@ -4,14 +4,18 @@
   justify-content: space-around;
 }
 
+.forecast-day__column{
+  border-left: 0.1rem solid gray;
+  border-right: 0.1rem solid gray;
+}
+
 .forecast-day__date, .forecast-day__weekday,
 .forecast-day__temperature, .forecast-day__pressure,
 .forecast-day__humidity, .forecast-day__icon {
   font-size: 3rem;
   text-align: center;
   margin-top: 3rem;
-  border-left: 0.1rem solid gray;
-  border-right: 0.1rem solid gray;
+
 }
 
 .weather-forecast__label {
@@ -19,4 +23,8 @@
   text-align: center;
   padding-top: 0.5rem;
   font-size: 5rem;
+}
+
+.weather-forecast__iconImg {
+  transform: scale(2,2);
 }

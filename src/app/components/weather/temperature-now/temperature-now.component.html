@@ -3,7 +3,7 @@
     <div class="weather-data__temperature now-temperature">
       <span class="temperature__value">{{weather?.main.temp  | number:"1.0-0"}} °C</span>
       <span class="temperature__icon" >
-        <img [src]="getIconUrl(weather?.weather.icon)" />
+        <img class="temperature__iconImg" [src]="getIconUrl(weather?.weather.icon)" />
       </span>
     </div>
   </div>
