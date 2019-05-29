@@ -18,12 +18,12 @@ export class MyVideoComponent {
   playlist: Array<IMedia> = [
     {
       title: 'STRIM',
-      src: '../../../assets/1.mp4',
+      src: '/assets/1.mp4',
       type: 'video/mp4'
     },
     {
       title: 'Mogilev',
-      src: '../../../assets/2.mp4',
+      src: '/assets/2.mp4',
       type: 'video/mp4'
     }
   ];
