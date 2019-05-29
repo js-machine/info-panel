@@ -14,8 +14,8 @@ export function weatherDtoToModel(dto: any): WeatherModel {
       humidity: main["humidity"],
     },
     sys: {
-      sunrise: new Date(sys["sunrise"]),
-      sunset: new Date(sys["sunset"])
+      sunrise: new Date(sys["sunrise"]*1000),
+      sunset: new Date(sys["sunset"]*1000)
     },
     weather: {
       icon: weather["icon"]
@@ -25,7 +25,9 @@ export function weatherDtoToModel(dto: any): WeatherModel {
       degree: wind["degree"]
     }
   };
-
+  console.log(model);
+  console.log(sys["sunrise"]);
+  console.log(sys["sunset"]);
   return model;
 }
 
