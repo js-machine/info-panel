@@ -1,7 +1,6 @@
 <div class="videoplayer">
-    <vg-player>
-      <video [vgMedia]="media" #media id="singleVideo" [autoplay]="true">
-        <source src="../../../assets/1.mp4" type="video/mp4">
-      </video>
-    </vg-player>
-  </div>
+  <vg-player (onPlayerReady)="onPlayerReady($event)">
+    <video #media [vgMedia]="media" [src]="currentItem.src" id="singleVideo" preload="auto" autoplay="true" crossorigin>
+    </video>
+  </vg-player>
+</div>
