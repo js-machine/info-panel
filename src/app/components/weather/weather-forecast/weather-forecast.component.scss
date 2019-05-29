@@ -2,11 +2,16 @@
   display: flex;
   flex: 1;
   justify-content: space-around;
-  align-content: center;
 }
-.forecast-day__temperature {
+
+.forecast-day__date, .forecast-day__weekday,
+.forecast-day__temperature, .forecast-day__pressure,
+.forecast-day__humidity, .forecast-day__icon {
+  font-size: 3rem;
   text-align: center;
-  margin-top: -0.5rem;
+  margin-top: 3rem;
+  border-left: 0.1rem solid gray;
+  border-right: 0.1rem solid gray;
 }
 
 .weather-forecast__label {

@@ -6,5 +6,7 @@ export interface ForecastModel {
   },
   weather: {
     icon: string
-  }
+  },
+  pressure: number,
+  humidity: number
 }

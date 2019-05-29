@@ -4,10 +4,12 @@
   </div>
   <div class="weather-forecast__day forecast-day">
     <div class="forecast-day__icon" *ngFor="let item of forecast">
-      <div>
-        <img [src]="getIconUrl(item?.weather.icon)" />
-      </div>
+      <div class="forecast-day__date">{{item.date | date:'dd.MM'}}</div>
+      <div class="forecast-day__weekday">{{item.date | date:'EEE'}}</div>
       <div class="forecast-day__temperature">{{item.temperature.day | number:"1.0-0"}} °C </div>
+      <div class="forecast-day__icon"><img [src]="getIconUrl(item?.weather.icon)" /></div>
+      <div class="forecast-day__pressure">{{item.pressure}} <br />мм.рт.ст.</div>
+      <div class="forecast-day__humidity">{{item.humidity}} %</div>
     </div>
   </div>
 </div>
