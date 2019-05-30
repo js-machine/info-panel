@@ -17,7 +17,7 @@ function createWindow() {
     y: 0,
     width: size.width,
     height: size.height,
-    // frame: false,
+    frame: false,
     // kiosk: true
   });
 
@@ -34,7 +34,7 @@ function createWindow() {
     }));
   }
 
-  win.webContents.openDevTools();
+ win.webContents.openDevTools();
 
   // Emitted when the window is closed.
   win.on('closed', () => {

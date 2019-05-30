@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { VgAPI } from 'videogular2/core';
+import playlistJSON  from 'assets/video/playlist.json';
 
 export interface IMedia {
   title: string;
@@ -15,18 +16,7 @@ export interface IMedia {
 
 
 export class MyVideoComponent {
-  playlist: Array<IMedia> = [
-    {
-      title: 'STRIM',
-      src: 'assets/1.mp4',
-      type: 'video/mp4'
-    },
-    {
-      title: 'Mogilev',
-      src: 'assets/2.mp4',
-      type: 'video/mp4'
-    }
-  ];
+  playlist: Array<IMedia> = playlistJSON;
 
   currentIndex = 0;
   currentItem: IMedia = this.playlist[this.currentIndex];
@@ -36,6 +26,7 @@ export class MyVideoComponent {
   }
 
   onPlayerReady(api: VgAPI) {
+    console.log(playlistJSON);
     this.api = api;
     this.api.getDefaultMedia().subscriptions.loadedMetadata.subscribe(this.playVideo.bind(this));
     this.api.getDefaultMedia().subscriptions.ended.subscribe(this.nextVideo.bind(this));
