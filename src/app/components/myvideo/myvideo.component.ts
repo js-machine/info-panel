@@ -26,7 +26,6 @@ export class MyVideoComponent {
   }
 
   onPlayerReady(api: VgAPI) {
-    console.log(playlistJSON);
     this.api = api;
     this.api.getDefaultMedia().subscriptions.loadedMetadata.subscribe(this.playVideo.bind(this));
     this.api.getDefaultMedia().subscriptions.ended.subscribe(this.nextVideo.bind(this));
