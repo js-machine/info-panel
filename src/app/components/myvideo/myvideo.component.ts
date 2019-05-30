@@ -32,7 +32,6 @@ export class MyVideoComponent {
   }
 
   nextVideo() {
-    console.log("test");
     this.currentIndex++;
 
     if (this.currentIndex === this.playlist.length) {
