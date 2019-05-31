@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {LogoComponent} from "./logo.component";
-import { CarouselModule, MDBBootstrapModule  } from 'angular-bootstrap-md';
+import { CarouselModule } from 'angular-bootstrap-md';
 
 
 @NgModule({
@@ -10,7 +10,6 @@ import { CarouselModule, MDBBootstrapModule  } from 'angular-bootstrap-md';
   ],
   imports: [
     BrowserModule,
-    MDBBootstrapModule.forRoot(),
     CarouselModule
   ],
   exports: [

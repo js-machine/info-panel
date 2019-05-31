@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {HomeComponent} from "./home.component";
-import {FingerMirrorComponent} from "../finger-mirror/finger-mirror.component";
+// import {FingerMirrorComponent} from "../finger-mirror/finger-mirror.component";
 import {RealtimeModule} from "../realtime/realtime.module";
 import {WeatherModule} from "../weather/weather.module";
 import {MyVideoModule} from "../myvideo/myvideo.module";
@@ -10,8 +10,7 @@ import {BrowserModule} from "@angular/platform-browser";
 
 @NgModule({
   declarations: [
-    HomeComponent,
-    FingerMirrorComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -22,8 +21,7 @@ import {BrowserModule} from "@angular/platform-browser";
     MyVideoModule
   ],
   exports: [
-    HomeComponent,
-    FingerMirrorComponent
+    HomeComponent
   ]
 })
 export class HomeModule { }

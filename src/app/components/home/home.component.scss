@@ -47,6 +47,7 @@
 
  .home-page__logo {
     height: 15%;
+    overflow: hidden;
   }
 
 .home-page__logo_big{
@@ -57,6 +58,6 @@
   transform: scale(0.5,0.5);
 }
 
-// .page-controls__space, .page-controls__mirror {
-//   flex: 1;
-// }
+.page-controls__space, .page-controls__mirror {
+  flex: 1;
+}
