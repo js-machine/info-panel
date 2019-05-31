@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {HomeComponent} from "./home.component";
-// import {FingerMirrorComponent} from "../finger-mirror/finger-mirror.component";
 import {RealtimeModule} from "../realtime/realtime.module";
 import {WeatherModule} from "../weather/weather.module";
 import {MyVideoModule} from "../myvideo/myvideo.module";
