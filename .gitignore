@@ -47,5 +47,3 @@ package-lock.json
 # System Files
 .DS_Store
 Thumbs.db
-src/assets/video/3.mp4
-src/assets/video/playlist.json

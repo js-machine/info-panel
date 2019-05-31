@@ -9,10 +9,11 @@ import { CarouselModule } from 'angular-bootstrap-md'
   ],
   imports: [
     BrowserModule,
-    CarouselModule
+    CarouselModule.forRoot()
   ],
   exports: [
     LogoComponent
-  ]
+  ],
+  bootstrap: [LogoComponent]
 })
 export class LogoModule { }
