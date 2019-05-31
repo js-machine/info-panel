@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
-import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
-import { CommonModule } from '@angular/common';
+import { BrowserModule } from '@angular/platform-browser';
 import {LogoComponent} from "./logo.component";
+import { CarouselModule, MDBBootstrapModule  } from 'angular-bootstrap-md';
 
 
 @NgModule({
@@ -9,12 +9,13 @@ import {LogoComponent} from "./logo.component";
     LogoComponent
   ],
   imports: [
-    HttpClientModule,
-    HttpClientJsonpModule,
-    CommonModule
+    BrowserModule,
+    MDBBootstrapModule.forRoot(),
+    CarouselModule
   ],
   exports: [
     LogoComponent
-  ]
+  ],
+  bootstrap: [LogoComponent]
 })
 export class LogoModule { }
