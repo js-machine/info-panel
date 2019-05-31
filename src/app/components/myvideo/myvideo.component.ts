@@ -17,12 +17,13 @@ export interface IMedia {
 
 export class MyVideoComponent {
   playlist: Array<IMedia> = playlistJSON;
-
   currentIndex = 0;
   currentItem: IMedia = this.playlist[this.currentIndex];
   api: VgAPI;
 
   constructor() {
+    this.currentIndex = localStorage.getItem('videoIndex') ? +localStorage.getItem('videoIndex') : 0 ;
+    this.currentItem = this.playlist[this.currentIndex];
   }
 
   onPlayerReady(api: VgAPI) {
@@ -37,6 +38,8 @@ export class MyVideoComponent {
     if (this.currentIndex === this.playlist.length) {
       this.currentIndex = 0;
     }
+
+    localStorage.setItem('videoIndex', String(this.currentIndex));
 
     this.currentItem = this.playlist[this.currentIndex];
   }
