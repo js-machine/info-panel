@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {LogoComponent} from "./logo.component";
-import { CarouselModule, WavesModule } from 'angular-bootstrap-md'
+import { CarouselModule } from 'angular-bootstrap-md'
 
 @NgModule({
   declarations: [
@@ -9,8 +9,7 @@ import { CarouselModule, WavesModule } from 'angular-bootstrap-md'
   ],
   imports: [
     BrowserModule,
-    CarouselModule,
-    WavesModule
+    CarouselModule
   ],
   exports: [
     LogoComponent
