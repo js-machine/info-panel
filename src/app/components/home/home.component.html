@@ -1,4 +1,4 @@
-<div class="home-page" (window:keydown.l)="goToAppList()">
+<div class="home-page" (window:keydown.l)="goToAppList()" (window:keydown.a)="goToForecast()" (window:keydown.d)="goToForecast()">
   <div class="home-page__info home-info">
     <div class="home-info__city">Могилёв</div>
     <info-realtime></info-realtime>
@@ -8,19 +8,16 @@
     </div>
   </div>
 
-  <div class="home-page__logo">
-    <div><img class="home-page__logoImg" src="assets/STRIM.png" /></div>
-    <div><img class="home-page__logoImg" src="assets/JSMachine.png" /></div>
-  </div>
+  <logo-view></logo-view>
   <div class="home-page__controls page-controls">
     <div class="page-controls__space">
     </div>
     <div class="page-controls__apps" (click)="goToAppList()">
       <i class="material-icons">apps</i>
     </div>
-    <div class="page-controls__mirror">
+    <!-- <div class="page-controls__mirror">
       <finger-mirror></finger-mirror>
-    </div>
+    </div> -->
     <!--    <div class="page-controls__back">-->
     <!--      <i class="material-icons">arrow_back</i>-->
     <!--    </div>-->

@@ -5,6 +5,7 @@ import {FingerMirrorComponent} from "../finger-mirror/finger-mirror.component";
 import {RealtimeModule} from "../realtime/realtime.module";
 import {WeatherModule} from "../weather/weather.module";
 import {MyVideoModule} from "../myvideo/myvideo.module";
+import {LogoModule} from "../logo/logo.module";
 import {BrowserModule} from "@angular/platform-browser";
 
 @NgModule({
@@ -17,6 +18,7 @@ import {BrowserModule} from "@angular/platform-browser";
     CommonModule,
     RealtimeModule,
     WeatherModule,
+    LogoModule,
     MyVideoModule
   ],
   exports: [

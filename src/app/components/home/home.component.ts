@@ -21,4 +21,8 @@ export class HomeComponent implements OnInit {
   goToAppList(): void {
     this.router.navigate(['/apps']);
   }
+
+  goToForecast(): void {
+    this.router.navigate(['/forecast']);
+  }
 }

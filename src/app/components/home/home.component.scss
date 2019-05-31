@@ -50,22 +50,34 @@
   overflow: hidden;
 }
 
-.home-page__logo {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  height: 15%;
-  & > div {
-    flex: 1;
-    text-align: center;
-    font-size: 3rem;
-  }
- }
+// .home-page__logo {
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-around;
+//   width: 100%;
+//   height: 15%;
+//   & > div {
+//     display: flex;
+//     align-items: center;
+    
+//     // flex-direction: column;
+//     // flex: 1;
+//     text-align: center;
+//     font-size: 3rem;
+//     & > div {
+//       margin-right: 1rem;
+//     }
+//   }
+//  }
 
-.home-page__logoImg{
+.home-page__logo_big{
   transform: scale(1.5,1.5);
 }
 
-.page-controls__space, .page-controls__mirror {
-  flex: 1;
+.home-page__logo_small{
+  transform: scale(0.5,0.5);
 }
+
+// .page-controls__space, .page-controls__mirror {
+//   flex: 1;
+// }

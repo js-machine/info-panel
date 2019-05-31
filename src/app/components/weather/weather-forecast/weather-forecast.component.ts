@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {WeatherApiService} from "../api/weather-api.service";
 import {ForecastModel} from "../model/forecast.model";
+import { interval, Observable } from "rxjs";
+import {flatMap} from "rxjs/operators";
 
 @Component({
   selector: 'info-weather-forecast',
@@ -12,9 +14,18 @@ export class WeatherForecastComponent implements OnInit {
   constructor(private api: WeatherApiService) { }
 
   forecast: Array<ForecastModel>;
+  forecast$: Observable<Array<ForecastModel>>;
 
   ngOnInit() {
     this.api.getForecast().subscribe((forecast) => {
+      this.forecast = forecast;
+    })
+
+    this.forecast$ = interval(3600000).pipe(flatMap(() => {
+      return this.api.getForecast()
+    }));
+
+    this.forecast$.subscribe((forecast) => {
       this.forecast = forecast;
     })
   }
