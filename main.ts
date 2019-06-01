@@ -2,12 +2,11 @@ import { app, BrowserWindow, screen } from 'electron';
 import * as path from 'path';
 import * as url from 'url';
 
-let win, serve;
+let win: BrowserWindow;
 const args = process.argv.slice(1);
-serve = args.some(val => val === '--serve');
+const serve = args.some(val => val === '--serve');
 
 function createWindow() {
-
   const electronScreen = screen;
   const size = electronScreen.getPrimaryDisplay().workAreaSize;
 
@@ -16,7 +15,7 @@ function createWindow() {
     x: 0,
     y: 0,
     width: size.width,
-    height: size.height,
+    height: size.height
     // frame: false,
     // kiosk: true
   });
@@ -27,14 +26,16 @@ function createWindow() {
     });
     win.loadURL('http://localhost:4200');
   } else {
-    win.loadURL(url.format({
-      pathname: path.join(__dirname, 'dist/index.html'),
-      protocol: 'file:',
-      slashes: true
-    }));
+    win.loadURL(
+      url.format({
+        pathname: path.join(__dirname, 'dist/index.html'),
+        protocol: 'file:',
+        slashes: true
+      })
+    );
   }
 
- win.webContents.openDevTools();
+  win.webContents.openDevTools();
 
   // Emitted when the window is closed.
   win.on('closed', () => {
@@ -43,11 +44,9 @@ function createWindow() {
     // when you should delete the corresponding element.
     win = null;
   });
-
 }
 
 try {
-
   app.commandLine.appendSwitch('autoplay-policy', 'no-user-gesture-required');
   // This method will be called when Electron has finished
   // initialization and is ready to create browser windows.
@@ -70,7 +69,6 @@ try {
       createWindow();
     }
   });
-
 } catch (e) {
   // Catch Error
   // throw e;

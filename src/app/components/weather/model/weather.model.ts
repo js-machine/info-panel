@@ -1,18 +1,18 @@
 export interface WeatherModel {
   main: {
-    pressure: number,
-    temp: number,
-    humidity: number
-  },
+    pressure: number;
+    temp: number;
+    humidity: number;
+  };
   sys: {
-    sunrise: Date,
-    sunset: Date
-  },
+    sunrise: Date;
+    sunset: Date;
+  };
   weather: {
-    icon: string
-  },
+    icon: string;
+  };
   wind: {
-    speed: number,
-    degree: number
-  }
+    speed: number;
+    degree: number;
+  };
 }

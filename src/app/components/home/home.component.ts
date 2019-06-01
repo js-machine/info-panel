@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {map} from "rxjs/operators";
-import {interval, Observable} from "rxjs";
-import {Router} from "@angular/router";
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { interval, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +9,6 @@ import {Router} from "@angular/router";
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
   constructor(private router: Router) {}
 
   now$: Observable<Date>;

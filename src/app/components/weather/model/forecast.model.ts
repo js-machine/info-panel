@@ -1,12 +1,12 @@
 export interface ForecastModel {
-  date: Date,
+  date: Date;
   temperature: {
-    day: number,
-    night: number
-  },
+    day: number;
+    night: number;
+  };
   weather: {
-    icon: string
-  },
-  pressure: number,
-  humidity: number
+    icon: string;
+  };
+  pressure: number;
+  humidity: number;
 }
