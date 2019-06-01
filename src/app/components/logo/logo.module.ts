@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { LogoComponent } from "./logo.component";
 import { CarouselModule } from 'ngx-owl-carousel-o';
-import { Routes, RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
@@ -13,8 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     CarouselModule,
-    BrowserAnimationsModule,
-    RouterModule.forRoot([]),
+    BrowserAnimationsModule
   ],
   exports: [
     LogoComponent
