@@ -22,6 +22,9 @@ export class MyVideoComponent {
   api: VgAPI;
 
   constructor() {
+    console.log(playlistJSON);
+    console.log(this.playlist);
+    this.playlist = playlistJSON;
     this.currentIndex = localStorage.getItem('videoIndex') ? +localStorage.getItem('videoIndex') : 0 ;
     this.currentItem = this.playlist[this.currentIndex];
   }
@@ -34,7 +37,7 @@ export class MyVideoComponent {
 
   nextVideo() {
     this.currentIndex++;
-
+    
     if (this.currentIndex === this.playlist.length) {
       this.currentIndex = 0;
     }

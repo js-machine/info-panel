@@ -5,13 +5,14 @@
     "sourceMap": true,
     "declaration": false,
     "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
+    // "resolveJsonModule": true,
+    // "esModuleInterop": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "target": "es5",
     "typeRoots": [
-      "node_modules/@types"
+      "node_modules/@types",
+      "src/typings.d.ts"
     ],
     "lib": [
       "es2017",

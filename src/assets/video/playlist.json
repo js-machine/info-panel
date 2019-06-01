@@ -1,12 +1,17 @@
 [
     {
-      "title": "STRIM",
-      "src": "assets/video/1.mp4",
-      "type": "video/mp4"
+        "title": "STRIM",
+        "src": "assets/video/1.mp4",
+        "type": "video/mp4"
     },
     {
-      "title": "Mogilev",
-      "src": "assets/video/2.mp4",
-      "type": "video/mp4"
+        "title": "Mogilev2",
+        "src": "assets/video/3.mp4",
+        "type": "video/mp4"
+    },
+    {
+        "title": "Mogilev",
+        "src": "assets/video/2.mp4",
+        "type": "video/mp4"
     }
 ]

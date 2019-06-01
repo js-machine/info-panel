@@ -17,7 +17,8 @@
             "tsConfig": "src/tsconfig.app.json",
             "polyfills": "src/polyfills.ts",
             "assets": [
-              "src/assets"
+              "src/assets",
+              "src/assets/video"
             ],
             "styles": [
               "node_modules/videogular2/fonts/videogular.css",
