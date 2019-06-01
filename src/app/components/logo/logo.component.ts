@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+// import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'logo-view',
@@ -6,8 +7,37 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./logo.component.scss']
 })
 
-export class LogoComponent implements OnInit {
+// export class LogoComponent implements OnInit {
+//   ngOnInit() {
+//   }
+// }
 
-  ngOnInit() {
+export class LogoComponent {
+  title = 'angularowlslider';
+  customOptions: any = {
+    loop: true,
+    mouseDrag: false,
+    touchDrag: false,
+    pullDrag: false,
+    dots: false,
+    navSpeed: 700,
+    navText: ['', ''],
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 1
+      },
+      740: {
+        items: 1
+      },
+      940: {
+        items: 1
+      }
+    },
+    nav: false,
+    autoplay: true,
+    autoplayTimeout: 1000
   }
 }
