@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
+import playlistJSON from 'assets/video/playlist.json';
 import { VgAPI } from 'videogular2/core';
-import playlistJSON  from 'assets/video/playlist.json';
 
-export interface IMedia {
+export interface Media {
   title: string;
   src: string;
   type: string;
@@ -13,17 +13,15 @@ export interface IMedia {
   templateUrl: './myvideo.component.html',
   styleUrls: ['./myvideo.component.scss']
 })
-
-
 export class MyVideoComponent {
-  playlist: Array<IMedia> = playlistJSON;
+  playlist: Media[] = playlistJSON;
   currentIndex = 0;
-  currentItem: IMedia = this.playlist[this.currentIndex];
+  currentItem: Media = this.playlist[this.currentIndex];
   api: VgAPI;
 
   constructor() {
     this.playlist = playlistJSON;
-    this.currentIndex = localStorage.getItem('videoIndex') ? +localStorage.getItem('videoIndex') : 0 ;
+    this.currentIndex = localStorage.getItem('videoIndex') ? +localStorage.getItem('videoIndex') : 0;
     this.currentItem = this.playlist[this.currentIndex];
   }
 
@@ -35,7 +33,7 @@ export class MyVideoComponent {
 
   nextVideo() {
     this.currentIndex++;
-    
+
     if (this.currentIndex === this.playlist.length) {
       this.currentIndex = 0;
     }

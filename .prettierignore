@@ -1,0 +1,8 @@
+node_modules/
+dist/
+main.js
+main.map.js
+package.json
+package-lock.json
+.vscode/*
+tslint.json

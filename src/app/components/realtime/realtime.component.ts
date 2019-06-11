@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {interval, Observable} from "rxjs";
-import {map} from "rxjs/operators";
+import { interval, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'info-realtime',
@@ -8,7 +8,6 @@ import {map} from "rxjs/operators";
   styleUrls: ['./realtime.component.scss']
 })
 export class RealtimeComponent implements OnInit {
-
   now$: Observable<Date>;
 
   ngOnInit() {
