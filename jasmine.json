@@ -1,0 +1,7 @@
+{
+  "spec_dir": "e2e",
+  "spec_files": ["**/*.e2e-spec.ts"],
+  "helpers": ["node_modules/ts-node/register/type-check.js"],
+  "stopSpecOnExpectationFailure": false,
+  "random": true
+}
