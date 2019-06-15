@@ -8,7 +8,7 @@ export function weatherDtoToModel(dto: any): WeatherModel {
 
   const model = {
     main: {
-      pressure: main['pressure'],
+      pressure: Math.round(main['pressure']*0.75),
       temp: main['temp'],
       humidity: main['humidity']
     },
@@ -32,7 +32,6 @@ export function forecastDtoToModel(dto: any): WeatherModel[] {
   const models = list.map(item => {
     const temp = item['temp'];
     const weather = item['weather'][0];
-    const pressure = item['pressure'];
     const humidity = item['humidity'];
 
     return {
@@ -44,7 +43,7 @@ export function forecastDtoToModel(dto: any): WeatherModel[] {
       weather: {
         icon: weather['icon']
       },
-      pressure,
+      pressure: Math.round(item['pressure']*0.75),
       humidity
     };
   });
