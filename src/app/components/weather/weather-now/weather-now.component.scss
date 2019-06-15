@@ -1,0 +1,33 @@
+.weather-now {
+  margin-top: 2rem;
+}
+
+.weather-data__sys {
+  display: flex;
+  justify-content: center;
+  & > div {
+    padding: 0rem 6rem;
+  }
+  img {
+    height: 2rem;
+  }
+}
+
+.weather-now {
+  text-align: center;
+  font-family: "Roboto Regular";
+  font-size: 5rem;
+}
+
+.weather-now__data > div {
+  padding: 1rem 0rem;
+}
+
+.now-temperature__icon {
+  position: relative;
+  left: 2rem;
+}
+
+.weather-now__iconImg {
+  transform: scale(2,2);
+}

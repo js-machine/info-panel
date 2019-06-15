@@ -1,21 +1,12 @@
-import { NgModule } from '@angular/core';
-import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
-import {RealtimeComponent} from "./realtime.component";
-import {WeatherComponent} from "./weather/weather.component";
 import { CommonModule } from '@angular/common';
+import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
+import { CurrencyComponent } from '../currency/currency.component';
+import { RealtimeComponent } from './realtime.component';
 
 @NgModule({
-  declarations: [
-    RealtimeComponent,
-    WeatherComponent
-  ],
-  imports: [
-    HttpClientModule,
-    HttpClientJsonpModule,
-    CommonModule
-  ],
-  exports: [
-    RealtimeComponent
-  ]
+  declarations: [RealtimeComponent, CurrencyComponent],
+  imports: [HttpClientModule, HttpClientJsonpModule, CommonModule],
+  exports: [RealtimeComponent]
 })
-export class RealtimeModule { }
+export class RealtimeModule {}

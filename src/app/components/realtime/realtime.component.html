@@ -1,1 +1,4 @@
-<info-weather></info-weather>
+<div class="realtime">
+  <div class="realtime__time">{{now$ | async | date:"HH:mm:ss" }}</div>
+  <div class="realtime__date">{{now$ | async | date:" dd MMMM, EEEE" }}</div>
+</div>

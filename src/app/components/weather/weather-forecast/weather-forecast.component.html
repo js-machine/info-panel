@@ -1,0 +1,15 @@
+<div class="weather-forecast">
+  <div class="weather-forecast__label">
+    <div>На 5 дней</div>
+  </div>
+  <div class="weather-forecast__day forecast-day">
+    <div class="forecast-day__column" *ngFor="let item of forecast">
+      <div class="forecast-day__date">{{item.date | date:'dd.MM'}}</div>
+      <div class="forecast-day__weekday">{{item.date | date:'EEE'}}</div>
+      <div class="forecast-day__temperature">{{item.temperature.day | number:"1.0-0"}} °C </div>
+      <div class="forecast-day__icon"><img class="weather-forecast__iconImg" [src]="getIconUrl(item?.weather.icon)" /></div>
+      <div class="forecast-day__pressure">{{item.pressure}} <br />мм.рт.ст.</div>
+      <div class="forecast-day__humidity">{{item.humidity}} %</div>
+    </div>
+  </div>
+</div>

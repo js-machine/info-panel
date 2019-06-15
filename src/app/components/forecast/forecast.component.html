@@ -1,0 +1,14 @@
+<div class="forecast-page" (window:keydown.l)="goToAppList()" (window:keydown.h)="goHome()" (window:keydown.a)="goHome()" (window:keydown.d)="goHome()">
+  <div class="forecast-page__info forecast-info">
+    <info-weather-now></info-weather-now>
+    <info-weather-forecast></info-weather-forecast>
+  </div>
+
+  <div class="forecast-page__controls page-controls">
+    <div class="page-controls__space">
+    </div>
+    <div class="page-controls__apps" (click)="goToAppList()">
+      <i class="material-icons">apps</i>
+    </div>
+  </div>
+</div>
