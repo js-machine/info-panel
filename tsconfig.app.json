@@ -1,14 +1,12 @@
 {
-  "extends": "../tsconfig.json",
+  "extends": "./tsconfig.json",
   "compilerOptions": {
-    "outDir": "../out-tsc/app",
+    "outDir": "./out-tsc/app",
     "module": "es2015",
     "resolveJsonModule": true,
     "esModuleInterop": true,
-    "baseUrl": "",
+    "baseUrl": "./src",
     "types": []
   },
-  "exclude": [
-    "**/*.spec.ts"
-  ]
+  "exclude": ["**/*.spec.ts"]
 }

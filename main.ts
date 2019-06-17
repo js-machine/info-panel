@@ -35,7 +35,8 @@ function createWindow() {
     );
   }
 
-  win.webContents.openDevTools();
+  // for test this option should be disable
+  // win.webContents.openDevTools();
 
   // Emitted when the window is closed.
   win.on('closed', () => {

@@ -1,4 +1,3 @@
-// import { Component, OnInit } from '@angular/core';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,12 +5,6 @@ import { Component } from '@angular/core';
   templateUrl: './logo.component.html',
   styleUrls: ['./logo.component.scss']
 })
-
-// export class LogoComponent implements OnInit {
-//   ngOnInit() {
-//   }
-// }
-
 export class LogoComponent {
   title = 'angularowlslider';
   customOptions: any = {

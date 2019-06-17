@@ -36,7 +36,8 @@
     "prettier:fix": "npx pretty-quick --config ./.prettierrc",
     "tslint:fix": "tslint -c tslint.json 'src/**/*.{ts}' --fix --format verbose",
     "lint": "ng lint",
-    "lint:fix": "npm run prettier:fix && npm run tslint:fix"
+    "lint:fix": "npm run prettier:fix && npm run tslint:fix",
+    "e2e": "ts-node --project e2e/tsconfig.json node_modules/jasmine/bin/jasmine --reporter=jasmine-console-reporter --config=jasmine.json"
   },
   "husky": {
     "hooks": {
@@ -79,13 +80,19 @@
     "@commitlint/config-angular": "^8.0.0",
     "@commitlint/config-conventional": "^8.0.0",
     "@types/core-js": "^2.5.0",
+    "@types/jasmine": "^3.3.13",
     "@types/node": "8.9.4",
+    "@types/webdriverio": "^4.13.3",
     "codelyzer": "4.5.0",
     "conventional-changelog-cli": "2.0.11",
+    "husky": "^2.4.1",
+    "jasmine": "^3.4.0",
+    "jasmine-console-reporter": "^3.1.0",
     "moment": "^2.24.0",
     "npm-run-all": "4.1.5",
     "prettier": "^1.17.1",
     "pretty-quick": "^1.11.0",
+    "spectron": "^5.0.0",
     "ts-node": "7.0.1",
     "tslint": "5.17.0",
     "tslint-config-prettier": "^1.18.0",
