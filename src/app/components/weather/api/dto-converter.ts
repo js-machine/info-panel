@@ -1,14 +1,17 @@
 import { WeatherModel } from '../model/weather.model';
 
+
+
 export function weatherDtoToModel(dto: any): WeatherModel {
   const main = dto['main'];
   const sys = dto['sys'];
   const weather = dto['weather'][0];
   const wind = dto['wind'];
+  const pressureGPAtoMMHGcoef = 0.75;
 
   const model = {
     main: {
-      pressure: Math.round(main['pressure']*0.75),
+      pressure: Math.round(main['pressure']*pressureGPAtoMMHGcoef),
       temp: main['temp'],
       humidity: main['humidity']
     },
@@ -33,6 +36,7 @@ export function forecastDtoToModel(dto: any): WeatherModel[] {
     const temp = item['temp'];
     const weather = item['weather'][0];
     const humidity = item['humidity'];
+    const pressureGPAtoMMHGcoef = 0.75;
 
     return {
       date: new Date(item['dt'] * 1000),
@@ -43,7 +47,7 @@ export function forecastDtoToModel(dto: any): WeatherModel[] {
       weather: {
         icon: weather['icon']
       },
-      pressure: Math.round(item['pressure']*0.75),
+      pressure: Math.round(item['pressure']*pressureGPAtoMMHGcoef),
       humidity
     };
   });

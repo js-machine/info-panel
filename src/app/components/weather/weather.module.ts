@@ -10,4 +10,5 @@ import { TemperatureComponent } from './temperature-now/temperature-now.componen
   imports: [HttpClientModule, HttpClientJsonpModule, CommonModule],
   exports: [TemperatureComponent, WeatherNowComponent, WeatherForecastComponent]
 })
-export class WeatherModule {}
+export class WeatherModule {
+}
