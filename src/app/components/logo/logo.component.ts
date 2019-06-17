@@ -39,5 +39,5 @@ export class LogoComponent {
     nav: false,
     autoplay: true,
     autoplayTimeout: 60000
-  }
+  };
 }
