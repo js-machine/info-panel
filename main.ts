@@ -1,4 +1,5 @@
 import { app, BrowserWindow, screen } from 'electron';
+import { AppConfig } from './src/environments/environment';
 import * as path from 'path';
 import * as url from 'url';
 
@@ -36,8 +37,10 @@ function createWindow() {
   }
 
   // for test this option should be disable
-  win.webContents.openDevTools();
-
+  if (!AppConfig.production) {
+    win.webContents.openDevTools();
+  }
+  
   // Emitted when the window is closed.
   win.on('closed', () => {
     // Dereference the window object, usually you would store window
