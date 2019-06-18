@@ -1,7 +1,7 @@
 import { app, BrowserWindow, screen } from 'electron';
-import { AppConfig } from './src/environments/environment';
 import * as path from 'path';
 import * as url from 'url';
+import { AppConfig } from './src/environments/environment';
 
 let win: BrowserWindow;
 const args = process.argv.slice(1);
@@ -40,7 +40,7 @@ function createWindow() {
   if (!AppConfig.production) {
     win.webContents.openDevTools();
   }
-  
+
   // Emitted when the window is closed.
   win.on('closed', () => {
     // Dereference the window object, usually you would store window
