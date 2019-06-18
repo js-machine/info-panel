@@ -1,6 +1,7 @@
 import { app, BrowserWindow, screen } from 'electron';
 import * as path from 'path';
 import * as url from 'url';
+import { AppConfig } from './src/environments/environment';
 
 let win: BrowserWindow;
 const args = process.argv.slice(1);
@@ -36,7 +37,9 @@ function createWindow() {
   }
 
   // for test this option should be disable
-  // win.webContents.openDevTools();
+  if (!AppConfig.production) {
+    win.webContents.openDevTools();
+  }
 
   // Emitted when the window is closed.
   win.on('closed', () => {

@@ -4,27 +4,31 @@
   justify-content: space-around;
 }
 
-.forecast-day__column{
+.forecast-day__column {
+  padding-bottom: 3rem;
   border-left: 0.1rem solid gray;
   border-right: 0.1rem solid gray;
 }
 
-.forecast-day__date, .forecast-day__weekday,
-.forecast-day__temperature, .forecast-day__pressure,
-.forecast-day__humidity, .forecast-day__icon {
+.forecast-day__date,
+.forecast-day__weekday,
+.forecast-day__temperature,
+.forecast-day__pressure,
+.forecast-day__humidity,
+.forecast-day__icon {
   font-size: 3rem;
   text-align: center;
   margin-top: 3rem;
-
 }
 
 .weather-forecast__label {
-  width:100%;
+  width: 100%;
   text-align: center;
-  padding-top: 0.5rem;
+  padding-top: 1rem;
   font-size: 5rem;
+  margin-bottom: 3rem;
 }
 
 .weather-forecast__iconImg {
-  transform: scale(2,2);
+  transform: scale(2, 2);
 }

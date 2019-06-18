@@ -1,4 +1,4 @@
-.forecast-page{
+.forecast-page {
   width: 100%;
   height: 100%;
   position: relative;
@@ -20,21 +20,24 @@
   z-index: -1;
 }
 
-.forecast-page__info{
-  flex:1;
+.forecast-page__info {
+  flex: 1;
 }
 
 .forecast-page__controls {
-    border-top: 0.1rem solid gray;
-    height: 13%;
-    display: flex;
-    flex-grow: 0;
-    justify-content: center;
-    padding: 1rem 0rem;
-  
-    i {
-      padding: 0rem 2rem;
-      font-size: 16rem;
-      cursor: pointer;
-    }
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  border-top: 0.1rem solid gray;
+  height: 13%;
+  display: flex;
+  flex-grow: 0;
+  justify-content: center;
+  padding: 1rem 0rem;
+
+  i {
+    padding: 0rem 2rem;
+    font-size: 16rem;
+    cursor: pointer;
   }
+}
