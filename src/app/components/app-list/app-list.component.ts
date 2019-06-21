@@ -16,4 +16,8 @@ export class AppListComponent {
   goToForecast(): void {
     this.router.navigate(['/forecast']);
   }
+
+  goToGame(): void {
+    this.router.navigate(['/game']);
+  }
 }
