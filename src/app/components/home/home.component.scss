@@ -10,13 +10,13 @@
 
 .home-info__city {
   text-align: center;
-  font-size: 14rem;
+  font-size: 12rem;
   margin-bottom: 0.5rem;
 }
 
 .home-page::after {
-  content: "";
-  background: url("assets/city.png");
+  content: '';
+  background: url('assets/city.png');
   opacity: 0.1;
   top: 0;
   left: 0;
@@ -29,12 +29,13 @@
 .home-page__controls {
   position: fixed;
   bottom: 0;
-  width:100%;
+  width: 100%;
   border-top: 0.1rem solid gray;
   height: 13%;
   display: flex;
   flex-grow: 0;
   justify-content: center;
+  align-items: center;
   padding: 1rem 0rem;
 
   i {

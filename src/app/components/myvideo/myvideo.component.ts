@@ -1,8 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import playlistJSON from 'assets/video/playlist.json';
-import { VgAPI } from 'videogular2/core';
-import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { VgAPI } from 'videogular2/core';
 
 export interface Media {
   title: string;
@@ -15,7 +15,6 @@ export interface Media {
   templateUrl: './myvideo.component.html',
   styleUrls: ['./myvideo.component.scss']
 })
-
 export class MyVideoComponent {
   private _jsonURL = 'assets/video/playlist.json';
   playlist: Media[] = playlistJSON;
