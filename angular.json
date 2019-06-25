@@ -24,7 +24,7 @@
               "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.theme.default.min.css",
               "src/styles.scss"
             ],
-            "scripts": ["node_modules/hammerjs/hammer.min.js"]
+            "scripts": ["node_modules/hammerjs/hammer.min.js", "node_modules/clmtrackr/build/clmtrackr.js"]
           },
           "configurations": {
             "dev": {

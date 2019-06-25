@@ -1,0 +1,22 @@
+<video #hardwareVideo width="{{ width }}" height="{{ height }}" id="video" autoplay loop></video>
+<canvas #overlay width="{{ width }}" height="{{ height }}" id="overlay"></canvas>
+<canvas #webgl width="{{ width }}" height="{{ height }}" id="webgl"></canvas>
+<div id="layer-3D" *ngIf="true">
+  <app-layer-3d
+    [width]="width"
+    [height]="height"
+    [cameraZ]="400"
+    [fieldOfView]="50"
+    [nearClipping]="1"
+    [farClipping]="1000"
+    [scaleX]="scaleX"
+    [scaleY]="scaleY"
+    [rotationY]="rotationY"
+    [rotationZ]="rotationZ"
+    [rotationX]="rotationX"
+    [posx]="posx"
+    [posy]="posy"
+  >
+  </app-layer-3d>
+</div>
+<img #imageMask src="" [hidden]="true" id="image" alt="" />

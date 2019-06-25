@@ -1,29 +1,5 @@
 <div class="mirror-page" (window:keydown.l)="goToAppList()" (window:keydown.h)="goHome()">
-  <div id="frame">
-    <div id="container">
-      <video id="videoel" width="400" height="300" preload="auto" loop playsinline autoplay></video>
-      <canvas id="overlay" width="400" height="300"></canvas>
-      <!-- <canvas id="webgl" width="400" height="300"></canvas> -->
-    </div>
-    <!-- <br />
-    <div id="controls">
-      <select name="deformation" id="deform">
-        <option value="unwell">Unwell</option>
-        <option value="inca">Inca</option>
-        <option value="cheery">Cheery</option>
-        <option value="dopey">Dopey</option>
-        <option value="longface">Longface</option>
-        <option value="lucky">Lucky</option>
-        <option value="overcute">Overcute</option>
-        <option value="aloof">Aloof</option>
-        <option value="evil">Evil</option>
-        <option value="artificial">Artificial</option>
-        <option value="none">None</option>
-      </select>
-      <p class="sublabel">Facedeform preset</p>
-      <input class="btn" type="button" value="wait, loading video & images" disabled="disabled" onclick="startVideo()" id="startbutton"/>
-    </div> -->
-  </div>
+  <app-facetrack [width]="width" [height]="height">Loading...</app-facetrack>
 
   <div class="mirror-page__controls page-controls">
     <div class="page-controls__space"></div>

@@ -1,0 +1,13 @@
+#overlay,
+#video,
+#webgl {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  transform: scaleX(-1);
+}
+#layer-3D {
+  position: absolute;
+  top: 0;
+  left: 0;
+}

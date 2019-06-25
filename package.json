@@ -73,6 +73,7 @@
     "material-design-icons": "^3.0.1",
     "ngx-owl-carousel-o": "^1.1.5",
     "rxjs": "6.3.3",
+    "three": "^0.105.2",
     "videogular2": "^6.4.0",
     "zone.js": "0.8.26"
   },
