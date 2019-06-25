@@ -87,7 +87,7 @@ export class FacetrackComponent implements OnInit {
     this.track.getFaceData(); // Comment for No-3D-Objects
   }
 
-  private loop = function () {
+  private loop = function() {
     this.scaleX = this.track._scaleX;
     this.scaleY = this.track._scaleY;
     this.rotationY = this.track._rotationY;

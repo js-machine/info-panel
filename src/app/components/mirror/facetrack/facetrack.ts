@@ -147,7 +147,7 @@ export class FaceTracker {
     this._clm.stop();
   }
 
-  public drawLoop = function () {
+  public drawLoop = function() {
     if (this._clm.getCurrentPosition()) {
       if (this._clm.getScore() > 0.5) {
         this._cc.clearRect(0, 0, this._canvas.width, this._canvas.height);
@@ -160,7 +160,7 @@ export class FaceTracker {
     requestAnimationFrame(this.drawLoop);
   };
 
-  public drawGrid = function () {
+  public drawGrid = function() {
     if (this._clm.getCurrentPosition()) {
       if (this._clm.getScore() > 0.5) {
         this._defor.drawGrid(this._clm.getCurrentPosition());
@@ -187,7 +187,7 @@ export class FaceTracker {
     requestAnimationFrame(this.drawMask);
   };
 
-  public getFaceData = function () {
+  public getFaceData = function() {
     if (this._clm.getCurrentPosition()) {
       if (this._clm.getScore() > 0.5) {
         this._scaleX = (this._clm.getCurrentPosition()[14][0] - this._clm.getCurrentPosition()[0][0]) / 80;
