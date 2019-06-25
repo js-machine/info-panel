@@ -8,55 +8,6 @@
   font-family: Roboto Regular;
 }
 
-body {
-  font-family: 'Lato';
-  background-color: #f0f0f0;
-  margin: 0px auto;
-  max-width: 1150px;
-}
-#overlay,
-#webgl {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  -o-transform: scaleX(-1);
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
-  -ms-filter: fliph; /*IE*/
-  filter: fliph; /*IE*/
-}
-#videoel {
-  -o-transform: scaleX(-1);
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
-  -ms-filter: fliph; /*IE*/
-  filter: fliph; /*IE*/
-}
-#container {
-  position: relative;
-  width: 370px;
-}
-#content {
-  margin-top: 50px;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 600px;
-}
-h2 {
-  font-weight: 400;
-}
-.btn {
-  font-family: 'Lato';
-  font-size: 16px;
-}
-#controls {
-  text-align: center;
-}
-.sublabel {
-  text-align: center;
-  font-size: 10px;
-  margin-top: 0px;
-}
 .mirror-page__controls {
   position: fixed;
   bottom: 0;

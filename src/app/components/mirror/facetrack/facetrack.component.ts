@@ -1,11 +1,11 @@
 import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
-import { FaceTracker } from './facetrack';
+import { FaceTracker } from './lib/facetrack';
 declare var navigator: any;
 
 @Component({
   selector: 'app-facetrack',
   templateUrl: './facetrack.component.html',
-  styleUrls: ['./facetrack.component.css']
+  styleUrls: ['./facetrack.component.scss']
 })
 export class FacetrackComponent implements OnInit {
   @ViewChild('hardwareVideo') private hardwareVideo: ElementRef;

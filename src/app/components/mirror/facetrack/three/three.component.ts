@@ -4,7 +4,7 @@ import * as THREE from 'three';
 @Component({
   selector: 'app-layer-3d',
   templateUrl: './three.component.html',
-  styleUrls: ['./three.component.css']
+  styleUrls: ['./three.component.scss']
 })
 export class ThreeComponent implements AfterViewInit {
   private camera: THREE.OrthographicCamera;
