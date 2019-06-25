@@ -4,6 +4,7 @@ import { AppListComponent } from './components/app-list/app-list.component';
 import { ForecastComponent } from './components/forecast/forecast.component';
 import { GameComponent } from './components/game/game.component';
 import { HomeComponent } from './components/home/home.component';
+import { MirrorComponent } from './components/mirror/mirror.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'game',
     component: GameComponent
+  },
+  {
+    path: 'mirror',
+    component: MirrorComponent
   }
 ];
 
