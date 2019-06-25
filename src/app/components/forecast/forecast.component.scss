@@ -6,18 +6,7 @@
   flex-direction: column;
   overflow: hidden;
   font-family: Roboto Regular;
-}
-
-.forecast-page::after {
-  content: '';
-  background: url('assets/city.png');
-  opacity: 0.1;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;
+  background-image: url("assets/city.png");
 }
 
 .forecast-page__info {

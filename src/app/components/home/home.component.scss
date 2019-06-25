@@ -6,6 +6,7 @@
   flex-direction: column;
   overflow: hidden;
   font-family: Roboto Regular;
+  background-image: url("assets/city.png");
 }
 
 .home-info__city {
@@ -14,16 +15,9 @@
   margin-bottom: 0.5rem;
 }
 
-.home-page::after {
-  content: '';
-  background: url('assets/city.png');
-  opacity: 0.1;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;
+.home-info__time {
+  height: 270px;
+  width: 100%;
 }
 
 .home-page__controls {
@@ -37,7 +31,6 @@
   justify-content: center;
   align-items: center;
   padding: 1rem 0rem;
-
   i {
     padding: 0rem 2rem;
     font-size: 16rem;
@@ -50,7 +43,10 @@
 }
 
 .home-page__logo {
+  position: fixed;
+  bottom: 250px;
   height: 15%;
+  width: 100%;
   overflow: hidden;
   margin: 3rem 0;
 }

@@ -3,9 +3,11 @@
 <div class="home-page" (window:keydown.l)="goToAppList()">
   <div class="home-page__info home-info">
     <div class="home-info__city">Могилёв</div>
-    <info-realtime></info-realtime>
+    <div class="home-info__time">
+      <info-realtime></info-realtime>
+    </div>
     <temperature-now></temperature-now>
-    <div class="home-page__info video-player">
+    <div class="home-page__video video-player">
       <video-player></video-player>
     </div>
   </div>
