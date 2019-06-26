@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { FaceTracker } from './lib/facetrack';
 declare var navigator: any;
 
@@ -11,7 +11,6 @@ export class FacetrackComponent implements OnInit {
   @ViewChild('hardwareVideo') private hardwareVideo: ElementRef;
   @ViewChild('overlay') private overlay: ElementRef;
   @ViewChild('webgl') private webgl: ElementRef;
-  @ViewChild('imageMask') private imageMask: ElementRef;
   /////////////////////////////////////////////////////////////
   private constraints: any;
   public track: any;
@@ -44,11 +43,11 @@ export class FacetrackComponent implements OnInit {
     };
     this.videoStart();
   }
-
-  public AfterViewInit() {
+  /* tslint:disable */
+  public ngAfterViewInit() {
     this.clmtrackr();
-    this.loop();
   }
+  /* tslint:enasable */
 
   private videoStart() {
     const video = this.hardwareVideo.nativeElement;
@@ -76,28 +75,32 @@ export class FacetrackComponent implements OnInit {
   }
 
   private clmtrackr() {
-    this.track = new FaceTracker(this.hardwareVideo, this.overlay, this.webgl, this.imageMask, true);
+    this.track = new FaceTracker(this.hardwareVideo, this.overlay, this.webgl, true);
     this.track.clmInit();
     // Debug
-    this.track.drawLoop();
-    this.track.drawGrid(); // */Comment for No-Debug
+    this.track.drawGridLoop();
+    // this.track.drawGrid(); // */Comment for No-Debug
     // Draw Face Mask
     // this.track.drawMask();//Comment for No-Mask
     // Draw 3D Objects
-    this.track.getFaceData(); // Comment for No-3D-Objects
+    // this.track.getFaceData(); // Comment for No-3D-Objects
   }
 
-  private loop = function() {
-    this.scaleX = this.track._scaleX;
-    this.scaleY = this.track._scaleY;
-    this.rotationY = this.track._rotationY;
-    this.rotationZ = this.track._rotationZ;
-    this.rotationX = this.track._rotationX;
-    this.posx = this.track._posx;
-    this.posy = this.track._posy;
+  // private loop = () => {
+  //   this.scaleX = this.track._scaleX;
+  //   this.scaleY = this.track._scaleY;
+  //   this.rotationY = this.track._rotationY;
+  //   this.rotationZ = this.track._rotationZ;
+  //   this.rotationX = this.track._rotationX;
+  //   this.posx = this.track._posx;
+  //   this.posy = this.track._posy;
 
-    requestAnimationFrame(this.loop);
-  };
+  //   requestAnimationFrame(this.loop);
+  // };
+
+  changeMask(value): void {
+    this.track.switchDeformedFace(value);
+  }
 
   private logError(error: any) {
     console.log(error.name + ': ' + error.message);
