@@ -1,4 +1,7 @@
 <div class="mirror-page" (window:keydown.l)="goToAppList()" (window:keydown.h)="goHome()">
+  <div class="mirror-page__header">
+    Кривое зеркало
+  </div>
   <app-facetrack [width]="width" [height]="height">Loading...</app-facetrack>
 
   <div class="mirror-page__controls page-controls">

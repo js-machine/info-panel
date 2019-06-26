@@ -21,6 +21,7 @@ export class FacetrackComponent implements OnInit {
   public rotationX = 0;
   public posx = 0;
   public posy = 0;
+
   ////////////////////////////////////////////////////////////
   @Input() public width = 1080;
   @Input() public height = 810;
@@ -31,27 +32,39 @@ export class FacetrackComponent implements OnInit {
   }
 
   public ngOnInit() {
+    const cameraNumber = 1;
+
     this.constraints = {
       audio: false,
       video: {
+        deviceId: { exact: 0 },
         width: { ideal: 640 },
         height: { ideal: 480 },
         minAspectRatio: 1.333,
         maxAspectRatio: 1.334,
-        minFrameRate: 30
+        minFrameRate: 15
       }
     };
+
+    navigator.mediaDevices.enumerateDevices().then(deviceInfos => {
+      for (let i = 0; i !== deviceInfos.length; ++i) {
+        const deviceInfo = deviceInfos[i];
+        if (deviceInfo.kind === 'videoinput' && i === cameraNumber) {
+          this.constraints.video.deviceId.exact = deviceInfo.deviceId;
+        }
+      }
+    });
     this.videoStart();
   }
   /* tslint:disable */
   public ngAfterViewInit() {
     this.clmtrackr();
   }
-  /* tslint:enasable */
+  /* tslint:enable */
 
   private videoStart() {
     const video = this.hardwareVideo.nativeElement;
-
+    console.log(this.constraints);
     const promise = new Promise<MediaStream>((resolve, reject) => {
       navigator.getUserMedia(
         this.constraints,

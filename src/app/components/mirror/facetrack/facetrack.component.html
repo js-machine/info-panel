@@ -1,19 +1,18 @@
-<div class="header"></div>
-<div id="container">
-  <video #hardwareVideo width="{{ width }}" height="{{ height }}" id="video" autoplay loop></video>
-  <canvas #overlay width="{{ width }}" height="{{ height }}" id="overlay"></canvas>
-  <canvas #webgl width="{{ width }}" height="{{ height }}" id="webgl"></canvas>
+<div class="facetrack__wrap">
+  <video #hardwareVideo width="{{ width }}" height="{{ height }}" class="facetrack__video" autoplay loop></video>
+  <canvas #overlay width="{{ width }}" height="{{ height }}" id="facetrack__overlay"></canvas>
+  <canvas #webgl width="{{ width }}" height="{{ height }}" id="facetrack__webgl"></canvas>
 </div>
-<div id="controls">
-  <button class="changeMask" (click)="changeMask('unwell')">Unwell</button>
-  <button class="changeMask" (click)="changeMask('inca')">Inca</button>
-  <button class="changeMask" (click)="changeMask('cheery')">Cheery</button>
-  <button class="changeMask" (click)="changeMask('dopey')">Dopey</button>
-  <button class="changeMask" (click)="changeMask('longface')">Longface</button>
-  <button class="changeMask" (click)="changeMask('lucky')">Lucky</button>
-  <button class="changeMask" (click)="changeMask('overcute')">Overcute</button>
-  <button class="changeMask" (click)="changeMask('aloof')">Aloof</button>
-  <button class="changeMask" (click)="changeMask('evil')">Evil</button>
-  <button class="changeMask" (click)="changeMask('artificial')">Artificial</button>
-  <button class="changeMask" (click)="changeMask('none')">None</button>
+<div class="facetrack__buttons">
+  <button class="facetrack__changeMaskButton" (click)="changeMask('unwell')">Unwell</button>
+  <button class="facetrack__changeMaskButton" (click)="changeMask('inca')">Inca</button>
+  <button class="facetrack__changeMaskButton" (click)="changeMask('cheery')">Cheery</button>
+  <button class="facetrack__changeMaskButton" (click)="changeMask('dopey')">Dopey</button>
+  <button class="facetrack__changeMaskButton" (click)="changeMask('longface')">Longface</button>
+  <button class="facetrack__changeMaskButton" (click)="changeMask('lucky')">Lucky</button>
+  <button class="facetrack__changeMaskButton" (click)="changeMask('overcute')">Overcute</button>
+  <button class="facetrack__changeMaskButton" (click)="changeMask('aloof')">Aloof</button>
+  <button class="facetrack__changeMaskButton" (click)="changeMask('evil')">Evil</button>
+  <button class="facetrack__changeMaskButton" (click)="changeMask('artificial')">Artificial</button>
+  <button class="facetrack__changeMaskButton" (click)="changeMask('none')">None</button>
 </div>
