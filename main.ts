@@ -1,7 +1,7 @@
 import { app, BrowserWindow, screen } from 'electron';
 import * as path from 'path';
 import * as url from 'url';
-import { AppConfig } from './src/environments/environment';
+// import { AppConfig } from './src/environments/environment';
 
 let win: BrowserWindow;
 const args = process.argv.slice(1);
@@ -16,9 +16,9 @@ function createWindow() {
     x: 0,
     y: 0,
     width: size.width,
-    height: size.height
-    // frame: false,
-    // kiosk: true
+    height: size.height,
+    frame: false,
+    kiosk: true
   });
 
   if (serve) {
@@ -37,9 +37,9 @@ function createWindow() {
   }
 
   // for test this option should be disable
-  if (!AppConfig.production) {
-    win.webContents.openDevTools();
-  }
+  // if (!AppConfig.production) {
+    // win.webContents.openDevTools();
+  // }
 
   // Emitted when the window is closed.
   win.on('closed', () => {

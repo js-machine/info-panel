@@ -11,17 +11,14 @@
   height: 810px;
 }
 
-.facetrack__buttons {
+.facetrack__buttonRow {
   display: flex;
   justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
 }
 
 .facetrack__changeMaskButton {
-  height: 5rem;
-  width: 25%;
+  height: 7.6rem;
+  width: 7.6rem;
   margin: 20px;
-  font-size: 3rem;
   cursor: pointer;
 }

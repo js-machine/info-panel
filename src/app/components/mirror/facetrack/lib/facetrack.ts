@@ -129,7 +129,7 @@ export class FaceTracker {
     this._videoCanvas.width = this._vid_width;
     this._videoCanvas.height = this._vid_height;
     //////////////////////////////
-    this._clm = new clm.tracker({ useWebGL: true, searchWindow: 14 });
+    this._clm = new clm.tracker();
     this._defor = new FaceDeformer();
     this._faceModel = new FaceModel();
 
@@ -144,7 +144,7 @@ export class FaceTracker {
       aloof: [0, 0, 0, 0, 0, 0, 0, -8, 0, 0, 0, 0, 0, 0, -2, 0, 0, 10],
       evil: [0, 0, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, -8],
       artificial: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 0, -16, 0, 0, 0, 0, 0],
-      none: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      none: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     };
   }
 
