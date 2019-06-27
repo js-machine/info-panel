@@ -48,7 +48,6 @@ export class FacetrackComponent implements OnInit {
             }
           };
           this.videoStart(constraints);
-
         }
       }
     });
@@ -79,7 +78,6 @@ export class FacetrackComponent implements OnInit {
         }
         video.onloadedmetadata = (e: any) => {
           video.play();
-
         };
       })
       .catch(this.logError);
