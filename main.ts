@@ -17,8 +17,8 @@ function createWindow() {
     y: 0,
     width: size.width,
     height: size.height,
-    frame: false,
-    kiosk: true
+    // frame: false,
+    // kiosk: true
   });
 
   if (serve) {
@@ -38,7 +38,7 @@ function createWindow() {
 
   // for test this option should be disable
   // if (!AppConfig.production) {
-    // win.webContents.openDevTools();
+    win.webContents.openDevTools();
   // }
 
   // Emitted when the window is closed.

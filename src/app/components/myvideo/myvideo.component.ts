@@ -16,16 +16,21 @@ export interface Media {
   styleUrls: ['./myvideo.component.scss']
 })
 export class MyVideoComponent {
+  private mediaPalyer: HTMLVideoElement;
   private _jsonURL = 'assets/video/playlist.json';
-  playlist: Media[] = playlistJSON;
-  currentIndex = 0;
-  currentItem: Media = this.playlist[this.currentIndex];
-  api: VgAPI;
+  private playlist: Media[] = playlistJSON;
+  private currentIndex = 0;
+  private videoTime = 0;
+  private currentItem: Media = this.playlist[this.currentIndex];
+  private api: VgAPI;
 
   constructor(private http: HttpClient) {
     this.getJSON().subscribe(data => {
+      this.currentIndex = sessionStorage.getItem('videoIndex') ? parseInt(sessionStorage.getItem('videoIndex'), 10) : 0;
+      this.videoTime = sessionStorage.getItem('videoTime') ? parseFloat(sessionStorage.getItem('videoTime')) : 0;
+      console.log(this.currentIndex);
+      console.log(this.videoTime);
       this.playlist = data;
-      this.currentIndex = localStorage.getItem('videoIndex') ? +localStorage.getItem('videoIndex') : 0;
       this.currentItem = this.playlist[this.currentIndex];
     });
   }
@@ -35,9 +40,19 @@ export class MyVideoComponent {
   }
 
   onPlayerReady(api: VgAPI) {
+    this.mediaPalyer = document.getElementById('singleVideo') as HTMLVideoElement;
     this.api = api;
     this.api.getDefaultMedia().subscriptions.loadedMetadata.subscribe(this.playVideo.bind(this));
     this.api.getDefaultMedia().subscriptions.ended.subscribe(this.nextVideo.bind(this));
+    this.mediaPalyer.ontimeupdate = () => {
+      this.saveTime();
+    };
+  }
+
+  saveTime() {
+    if (this.mediaPalyer.currentTime !== 0) {
+      sessionStorage.setItem('videoTime', String(this.mediaPalyer.currentTime));
+    }
   }
 
   nextVideo() {
@@ -47,12 +62,15 @@ export class MyVideoComponent {
       this.currentIndex = 0;
     }
 
-    localStorage.setItem('videoIndex', String(this.currentIndex));
-
+    sessionStorage.setItem('videoIndex', String(this.currentIndex));
     this.currentItem = this.playlist[this.currentIndex];
   }
 
   playVideo() {
+    if (this.videoTime) {
+      this.api.seekTime(this.videoTime);
+      this.videoTime = 0;
+    }
     this.api.play();
   }
 }

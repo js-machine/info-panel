@@ -129,7 +129,7 @@ export class FaceTracker {
     this._videoCanvas.width = this._vid_width;
     this._videoCanvas.height = this._vid_height;
     //////////////////////////////
-    this._clm = new clm.tracker();
+    this._clm = new clm.tracker({searchWindow : 14 });
     this._defor = new FaceDeformer();
     this._faceModel = new FaceModel();
 
@@ -189,7 +189,7 @@ export class FaceTracker {
     }
     // check whether mask has converged
     const pn = this._clm.getConvergence();
-    if (pn < 0.4) {
+    if (pn < 0.6) {
       this.drawMaskLoop();
     } else {
       requestAnimationFrame(this.drawGridLoop);
