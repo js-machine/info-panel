@@ -41,7 +41,7 @@ export class FacetrackComponent implements OnInit {
             video: {
               deviceId: { exact: cameras[i].deviceId },
               width: { ideal: 640 },
-              height: { ideal: 480 },
+              height: { ideal: 480 }
               // minAspectRatio: 1.333,
               // maxAspectRatio: 1.334,
               // minFrameRate: 30
