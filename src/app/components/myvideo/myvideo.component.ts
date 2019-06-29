@@ -28,8 +28,6 @@ export class MyVideoComponent {
     this.getJSON().subscribe(data => {
       this.currentIndex = sessionStorage.getItem('videoIndex') ? parseInt(sessionStorage.getItem('videoIndex'), 10) : 0;
       this.videoTime = sessionStorage.getItem('videoTime') ? parseFloat(sessionStorage.getItem('videoTime')) : 0;
-      console.log(this.currentIndex);
-      console.log(this.videoTime);
       this.playlist = data;
       this.currentItem = this.playlist[this.currentIndex];
     });
