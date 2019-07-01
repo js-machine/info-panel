@@ -14,6 +14,10 @@ export class GameComponent implements OnInit {
     this.router.navigate(['/apps']);
   }
 
+  goHome(): void {
+    this.router.navigate(['/']);
+  }
+
   ngOnInit(): void {
     const game = new Game({
       gameContainer: document.getElementById('game-container'),

@@ -18,19 +18,19 @@ export class FaceDeformer {
   private texCoordLocation: any;
   private pdmModel: any;
 
-  private usegrid = false;
+  private usegrId = false;
   private drawProgram: any;
   private gridProgram: any;
 
-  private webgl_utils: any;
+  private webglUtils: any;
 
   constructor() {
-    this.webgl_utils = new WebGLUtils();
+    this.webglUtils = new WebGLUtils();
   }
 
   public init(canvas: any): void {
     // ready a webgl element
-    this.gl = this.webgl_utils.getWebGLContext(canvas);
+    this.gl = this.webglUtils.getWebGLContext(canvas);
     this.gl.pixelStorei(this.gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, true);
   }
 
@@ -120,10 +120,10 @@ export class FaceDeformer {
 
       const gridFragmentShaderProg = ['void main() {', '  gl_FragColor = vec4(0.2, 0.2, 0.2, 1.0);', '}'].join('\n');
 
-      const gridVertexShader = this.webgl_utils.loadShader(this.gl, gridVertexShaderProg, this.gl.VERTEX_SHADER);
-      const gridFragmentShader = this.webgl_utils.loadShader(this.gl, gridFragmentShaderProg, this.gl.FRAGMENT_SHADER);
+      const gridVertexShader = this.webglUtils.loadShader(this.gl, gridVertexShaderProg, this.gl.VERTEX_SHADER);
+      const gridFragmentShader = this.webglUtils.loadShader(this.gl, gridFragmentShaderProg, this.gl.FRAGMENT_SHADER);
       try {
-        this.gridProgram = this.webgl_utils.loadProgram(this.gl, [gridVertexShader, gridFragmentShader]);
+        this.gridProgram = this.webglUtils.loadProgram(this.gl, [gridVertexShader, gridFragmentShader]);
       } catch (err) {
         alert('There was a problem setting up the webGL programs. Maybe you should try it in another browser.');
       }
@@ -161,9 +161,9 @@ export class FaceDeformer {
         '}'
       ].join('\n');
 
-      const vertexShader = this.webgl_utils.loadShader(this.gl, vertexShaderProg, this.gl.VERTEX_SHADER);
-      const fragmentShader = this.webgl_utils.loadShader(this.gl, fragmentShaderProg, this.gl.FRAGMENT_SHADER);
-      this.drawProgram = this.webgl_utils.loadProgram(this.gl, [vertexShader, fragmentShader]);
+      const vertexShader = this.webglUtils.loadShader(this.gl, vertexShaderProg, this.gl.VERTEX_SHADER);
+      const fragmentShader = this.webglUtils.loadShader(this.gl, fragmentShaderProg, this.gl.FRAGMENT_SHADER);
+      this.drawProgram = this.webglUtils.loadProgram(this.gl, [vertexShader, fragmentShader]);
 
       this.texCoordBuffer = this.gl.createBuffer();
 
@@ -208,7 +208,7 @@ export class FaceDeformer {
   }
 
   public draw(points: any): void {
-    if (this.usegrid) {
+    if (this.usegrId) {
       // switch program if needed
       this.gl.useProgram(this.drawProgram);
 
@@ -218,7 +218,7 @@ export class FaceDeformer {
       this.gl.bindBuffer(this.gl.ARRAY_BUFFER, this.texCoordBuffer);
       this.gl.vertexAttribPointer(this.texCoordLocation, 2, this.gl.FLOAT, false, 0, 0);
 
-      this.usegrid = false;
+      this.usegrId = false;
     }
 
     // create drawvertices based on points
@@ -247,10 +247,10 @@ export class FaceDeformer {
   }
 
   public drawGrid(points: any): void {
-    if (!this.usegrid) {
+    if (!this.usegrId) {
       this.gl.useProgram(this.gridProgram);
 
-      this.usegrid = true;
+      this.usegrId = true;
     }
 
     // create drawvertices based on points

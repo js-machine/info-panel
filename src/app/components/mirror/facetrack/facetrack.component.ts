@@ -31,7 +31,7 @@ export class FacetrackComponent implements OnInit {
   }
 
   public ngOnInit() {
-    const cameraNumber = 1;
+    const cameraNumber = 0;
     navigator.mediaDevices.enumerateDevices().then(deviceInfos => {
       const cameras = deviceInfos.filter(el => el.kind === 'videoinput');
       for (let i = 0; i !== cameras.length; ++i) {

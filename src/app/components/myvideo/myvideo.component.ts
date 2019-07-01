@@ -16,7 +16,6 @@ export interface Media {
   styleUrls: ['./myvideo.component.scss']
 })
 export class MyVideoComponent {
-  private mediaPalyer: HTMLVideoElement;
   private _jsonURL = 'assets/video/playlist.json';
   private playlist: Media[] = playlistJSON;
   private currentIndex = 0;
@@ -38,19 +37,9 @@ export class MyVideoComponent {
   }
 
   onPlayerReady(api: VgAPI) {
-    this.mediaPalyer = document.getElementById('singleVideo') as HTMLVideoElement;
     this.api = api;
     this.api.getDefaultMedia().subscriptions.loadedMetadata.subscribe(this.playVideo.bind(this));
     this.api.getDefaultMedia().subscriptions.ended.subscribe(this.nextVideo.bind(this));
-    this.mediaPalyer.ontimeupdate = () => {
-      this.saveTime();
-    };
-  }
-
-  saveTime() {
-    if (this.mediaPalyer.currentTime !== 0) {
-      sessionStorage.setItem('videoTime', String(this.mediaPalyer.currentTime));
-    }
   }
 
   nextVideo() {

@@ -10,7 +10,7 @@
 }
 
 .app-list__panel {
-  height: 85.3%;
+  height: 85%;
 }
 
 .app-list__panel {
@@ -20,7 +20,7 @@
   & > div {
     font-size: 4rem;
     font-family: 'Roboto Regular';
-    border: 1px solid gray;
+    border: 0.1rem solid gray;
     justify-content: center;
     flex-direction: column;
     text-align: center;

@@ -16,7 +16,7 @@
 }
 
 .home-info__time {
-  height: 270px;
+  height: 15rem;
   width: 100%;
 }
 
@@ -30,10 +30,9 @@
   flex-grow: 0;
   justify-content: center;
   align-items: center;
-  padding: 1rem 0rem;
+  padding: 0.9rem 0rem;
   i {
-    padding: 0rem 2rem;
-    font-size: 16rem;
+    font-size: 15rem;
     cursor: pointer;
   }
 }
@@ -44,11 +43,11 @@
 
 .home-page__logo {
   position: fixed;
-  bottom: 250px;
+  bottom: 15rem;
   height: 15%;
   width: 100%;
   overflow: hidden;
-  margin: 3rem 0;
+  margin: 1rem 0;
 }
 
 .page-controls__space,
