@@ -1,4 +1,4 @@
-.forecast-page {
+.mirror-page {
   width: 100%;
   height: 100%;
   position: relative;
@@ -9,11 +9,17 @@
   background-image: url('assets/city.png');
 }
 
-.forecast-page__info {
-  flex: 1;
+.mirror-page__header {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 13rem;
 }
 
-.forecast-page__controls {
+.mirror-page__controls {
   position: fixed;
   bottom: 0;
   width: 100%;

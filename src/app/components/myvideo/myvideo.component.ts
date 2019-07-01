@@ -1,5 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import playlistJSON from 'assets/video/playlist.json';
+import { Observable } from 'rxjs';
 import { VgAPI } from 'videogular2/core';
 
 export interface Media {
@@ -14,15 +16,24 @@ export interface Media {
   styleUrls: ['./myvideo.component.scss']
 })
 export class MyVideoComponent {
-  playlist: Media[] = playlistJSON;
-  currentIndex = 0;
-  currentItem: Media = this.playlist[this.currentIndex];
-  api: VgAPI;
+  private _jsonURL = 'assets/video/playlist.json';
+  private playlist: Media[] = playlistJSON;
+  private currentIndex = 0;
+  private videoTime = 0;
+  private currentItem: Media = this.playlist[this.currentIndex];
+  private api: VgAPI;
 
-  constructor() {
-    this.playlist = playlistJSON;
-    this.currentIndex = localStorage.getItem('videoIndex') ? +localStorage.getItem('videoIndex') : 0;
-    this.currentItem = this.playlist[this.currentIndex];
+  constructor(private http: HttpClient) {
+    this.getJSON().subscribe(data => {
+      this.currentIndex = sessionStorage.getItem('videoIndex') ? parseInt(sessionStorage.getItem('videoIndex'), 10) : 0;
+      this.videoTime = sessionStorage.getItem('videoTime') ? parseFloat(sessionStorage.getItem('videoTime')) : 0;
+      this.playlist = data;
+      this.currentItem = this.playlist[this.currentIndex];
+    });
+  }
+
+  public getJSON(): Observable<any> {
+    return this.http.get(this._jsonURL);
   }
 
   onPlayerReady(api: VgAPI) {
@@ -38,12 +49,15 @@ export class MyVideoComponent {
       this.currentIndex = 0;
     }
 
-    localStorage.setItem('videoIndex', String(this.currentIndex));
-
+    sessionStorage.setItem('videoIndex', String(this.currentIndex));
     this.currentItem = this.playlist[this.currentIndex];
   }
 
   playVideo() {
+    if (this.videoTime) {
+      this.api.seekTime(this.videoTime);
+      this.videoTime = 0;
+    }
     this.api.play();
   }
 }

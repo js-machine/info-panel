@@ -2,9 +2,11 @@
   <div class="app-list__panel apps-panel">
     <div (click)="goToHome()"><i class="material-icons">home</i></div>
     <div (click)="goToForecast()"><i class="material-icons">wb_cloudy</i></div>
-    <div><i class="material-icons">portrait</i></div>
+    <div (click)="goToMirror()"><i class="material-icons">portrait</i></div>
     <div (click)="goToGame()"><i class="material-icons">videogame_asset</i></div>
-    <div><i class="material-icons">attach_money</i></div>
-    <div><i class="material-icons">perm_device_information</i></div>
+    <div disabled="true"><i class="material-icons">attach_money</i></div>
+    <div disabled="true"><i class="material-icons">perm_device_information</i></div>
   </div>
+
+  <div class="app-list__cameraview"></div>
 </div>

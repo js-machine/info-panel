@@ -15,8 +15,8 @@
 
 .weather-now {
   text-align: center;
-  font-family: "Roboto Regular";
-  font-size: 5rem;
+  font-family: 'Roboto Regular';
+  font-size: 4.5rem;
 }
 
 .weather-now__data > div {
@@ -29,5 +29,5 @@
 }
 
 .weather-now__iconImg {
-  transform: scale(2,2);
+  transform: scale(2, 2);
 }

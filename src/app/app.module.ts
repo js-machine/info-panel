@@ -11,6 +11,7 @@ import { AppListComponent } from './components/app-list/app-list.component';
 import { ForecastModule } from './components/forecast/forecast.module';
 import { GameModule } from './components/game/game.module';
 import { HomeModule } from './components/home/home.module';
+import { MirrorModule } from './components/mirror/mirror.module';
 
 @NgModule({
   declarations: [AppComponent, AppListComponent],
@@ -22,7 +23,8 @@ import { HomeModule } from './components/home/home.module';
     FormsModule,
     HomeModule,
     MatIconModule,
-    MatGridListModule
+    MatGridListModule,
+    MirrorModule
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'ru' }],
   bootstrap: [AppComponent]

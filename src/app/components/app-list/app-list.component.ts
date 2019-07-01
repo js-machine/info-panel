@@ -20,4 +20,8 @@ export class AppListComponent {
   goToGame(): void {
     this.router.navigate(['/game']);
   }
+
+  goToMirror(): void {
+    this.router.navigate(['/mirror']);
+  }
 }
