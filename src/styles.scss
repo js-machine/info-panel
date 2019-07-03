@@ -1,4 +1,13 @@
 @import '~material-design-icons/iconfont/material-icons.css';
+@font-face {
+  font-family: 'NotoSans';
+  src: url('./assets/Fonts/Noto_Sans/NotoSans-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Didact';
+  font-weight: 400;
+  src: url('./assets/Fonts/Didact_Gothic/DidactGothic-Regular.ttf') format('truetype');
+}
 /* You can add global styles to this file, and also import other style files */
 html,
 body {
@@ -7,5 +16,7 @@ body {
   background-color: white;
   line-height: 1;
   height: 100%;
-  color: black;
+  color: #2e2e2e;
+  font-family: 'Didact';
+  font-weight: 400;
 }

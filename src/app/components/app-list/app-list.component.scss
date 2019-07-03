@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  font-family: Roboto Regular;
+  // font-family: Roboto Regular;
   background-image: url('assets/city.png');
 }
 
@@ -19,7 +19,7 @@
 
   & > div {
     font-size: 4rem;
-    font-family: 'Roboto Regular';
+    // font-family: 'Roboto Regular';
     border: 0.1rem solid gray;
     justify-content: center;
     flex-direction: column;
