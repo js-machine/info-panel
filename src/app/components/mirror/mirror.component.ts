@@ -16,5 +16,9 @@ export class MirrorComponent implements OnInit {
     this.router.navigate(['/apps']);
   }
 
+  goHome(): void {
+    this.router.navigate(['/']);
+  }
+
   ngOnInit(): void {}
 }

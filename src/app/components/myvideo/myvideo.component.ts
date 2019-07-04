@@ -22,6 +22,7 @@ export class MyVideoComponent {
   private videoTime = 0;
   private currentItem: Media = this.playlist[this.currentIndex];
   private api: VgAPI;
+  private mediaPalyer: HTMLVideoElement;
 
   constructor(private http: HttpClient) {
     this.getJSON().subscribe(data => {
@@ -40,6 +41,19 @@ export class MyVideoComponent {
     this.api = api;
     this.api.getDefaultMedia().subscriptions.loadedMetadata.subscribe(this.playVideo.bind(this));
     this.api.getDefaultMedia().subscriptions.ended.subscribe(this.nextVideo.bind(this));
+    this.mediaPalyer = document.getElementById('singleVideo') as HTMLVideoElement;
+  }
+
+  /* tslint:disable */
+  public ngOnDestroy() {
+    this.saveVideoTime();
+  }
+  /* tslint:enable */
+
+  private saveVideoTime() {
+    if (this.mediaPalyer.currentTime !== 0) {
+      sessionStorage.setItem('videoTime', String(this.mediaPalyer.currentTime));
+    }
   }
 
   nextVideo() {

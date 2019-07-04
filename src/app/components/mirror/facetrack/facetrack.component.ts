@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { FaceTracker } from './lib/facetrack';
 declare var navigator: any;
 
@@ -7,7 +7,7 @@ declare var navigator: any;
   templateUrl: './facetrack.component.html',
   styleUrls: ['./facetrack.component.scss']
 })
-export class FacetrackComponent implements OnInit {
+export class FacetrackComponent implements OnInit, OnDestroy {
   @ViewChild('hardwareVideo') private hardwareVideo: ElementRef;
   @ViewChild('overlay') private overlay: ElementRef;
   @ViewChild('webgl') private webgl: ElementRef;
@@ -31,7 +31,7 @@ export class FacetrackComponent implements OnInit {
   }
 
   public ngOnInit() {
-    const cameraNumber = 0;
+    const cameraNumber = 1;
     navigator.mediaDevices.enumerateDevices().then(deviceInfos => {
       const cameras = deviceInfos.filter(el => el.kind === 'videoinput');
       for (let i = 0; i !== cameras.length; ++i) {
@@ -40,11 +40,9 @@ export class FacetrackComponent implements OnInit {
             audio: false,
             video: {
               deviceId: { exact: cameras[i].deviceId },
-              width: { ideal: 640 },
-              height: { ideal: 480 }
-              // minAspectRatio: 1.333,
-              // maxAspectRatio: 1.334,
-              // minFrameRate: 30
+              minAspectRatio: 1.333,
+              maxAspectRatio: 1.334,
+              ыminFrameRate: 30
             }
           };
           this.videoStart(constraints);
@@ -54,6 +52,10 @@ export class FacetrackComponent implements OnInit {
   }
 
   /* tslint:disable */
+  public ngOnDestroy() {
+    this.track.clmStop();
+  }
+
   public ngAfterViewInit() {
     this.clmtrackr();
   }

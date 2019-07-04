@@ -1,7 +1,7 @@
 import { app, BrowserWindow, screen } from 'electron';
 import * as path from 'path';
 import * as url from 'url';
-import { AppConfig } from './src/environments/environment';
+// import { AppConfig } from './src/environments/environment';
 
 let win: BrowserWindow;
 const args = process.argv.slice(1);
@@ -37,9 +37,9 @@ function createWindow() {
   }
 
   // for test this option should be disable
-  if (!AppConfig.production) {
-    win.webContents.openDevTools();
-  }
+  // if (!AppConfig.production) {
+  win.webContents.openDevTools();
+  // }
 
   // Emitted when the window is closed.
   win.on('closed', () => {
@@ -51,6 +51,13 @@ function createWindow() {
 }
 
 try {
+  const gotLock = app.requestSingleInstanceLock();
+
+  if (!gotLock) {
+    console.log('Other instance detected: exiting');
+    app.exit();
+  }
+
   app.commandLine.appendSwitch('autoplay-policy', 'no-user-gesture-required');
   // This method will be called when Electron has finished
   // initialization and is ready to create browser windows.
