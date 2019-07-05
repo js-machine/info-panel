@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { interval, Observable } from 'rxjs';
+import { flatMap } from 'rxjs/operators';
 import { CurrencyApiService } from './api/currency-api.service';
 import { CurrencyModel } from './model/currency.model';
 
@@ -21,15 +23,26 @@ export class CurrencyComponent implements OnInit {
   }
 
   currencies: CurrencyModel[];
+  currencies$: Observable<CurrencyModel[]>;
 
   ngOnInit() {
     this.api.getCurrency().subscribe(values => {
       this.currencies = values;
     });
+
+    this.currencies$ = interval(3600000).pipe(
+      flatMap(() => {
+        return this.api.getCurrency();
+      })
+    );
+
+    this.currencies$.subscribe(currencies => {
+      this.currencies = currencies;
+    });
   }
 
   getImagePath(currency: CurrencyModel): string {
     const image = this.mapping[currency.code];
-    return `${this.ASSETS_PATH}/${image}.png`;
+    return `assets/${image}.png`;
   }
 }

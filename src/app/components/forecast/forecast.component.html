@@ -1,4 +1,4 @@
-<div class="forecast-page" (window:keydown.l)="goToAppList()" (window:keydown.h)="goHome()">
+<div class="forecast-page" (window:keydown.l)="changePage('list')" (window:keydown.h)="changePage('home')">
   <div class="forecast-page__info forecast-info">
     <info-weather-now></info-weather-now>
     <info-weather-forecast></info-weather-forecast>

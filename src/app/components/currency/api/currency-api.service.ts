@@ -10,7 +10,7 @@ import { currencyDtoToModel } from './dto-converter';
   providedIn: 'root'
 })
 export class CurrencyApiService {
-  readonly API_URL = 'https://www.instagram.com/fly.belarus';
+  readonly API_URL = 'http://www.nbrb.by/API/ExRates/Rates?Periodicity=0';
 
   constructor(private httpClient: HttpClient) {}
 
