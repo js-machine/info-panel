@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,8 +10,8 @@ export class ForecastComponent implements OnInit {
   @ViewChild('canvasEl') canvasEl: ElementRef;
 
   private context: CanvasRenderingContext2D;
-  private width: number = 1080;
-  private height: number = 1500;
+  private width = 1080;
+  private height = 1500;
 
   constructor(private router: Router) {}
 
@@ -26,7 +26,7 @@ export class ForecastComponent implements OnInit {
 
   draw() {
     // Create a linear gradient
-    let gradient = this.context.createLinearGradient(0, 0, 0, this.height);
+    const gradient = this.context.createLinearGradient(0, 0, 0, this.height);
 
     gradient.addColorStop(0, '#6195e8');
     gradient.addColorStop(1, '#8aade3');
