@@ -1,13 +1,20 @@
+.weather-forecast {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
 .weather-forecast__day {
   display: flex;
   flex: 1;
-  justify-content: space-around;
 }
 
 .forecast-day__column {
+  flex-grow: 1;
   padding-bottom: 3rem;
-  border-left: 0.1rem solid gray;
-  border-right: 0.1rem solid gray;
+  border-right: 0.1rem solid rgba(255, 255, 255, 0.5);
+}
+.forecast-day__column:nth-last-child(1) {
+  border-right: 0;
 }
 
 .forecast-day__date,
@@ -16,7 +23,7 @@
 .forecast-day__pressure,
 .forecast-day__humidity,
 .forecast-day__icon {
-  font-size: 3rem;
+  font-size: 2.4rem;
   text-align: center;
   margin-top: 3rem;
 }

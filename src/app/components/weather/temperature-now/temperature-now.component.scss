@@ -1,5 +1,5 @@
 .weather {
-  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .weather-data__sys {
@@ -15,8 +15,8 @@
 
 .weather {
   text-align: center;
-  font-family: "Roboto Regular";
-  font-size: 6rem;
+  font-family: 'NotoSans';
+  font-size: 5rem;
 }
 
 .weather__data > div {
@@ -25,9 +25,10 @@
 
 .temperature__icon {
   position: relative;
+  top: -10px;
   left: 2rem;
 }
 
 .temperature__iconImg {
-  transform: scale(2,2);
+  transform: scale(2, 2);
 }

@@ -1,15 +1,17 @@
 .realtime {
   text-align: center;
-  font-family: 'Roboto Regular';
+  // font-family: 'Roboto Regular';
 }
 
 .realtime__time {
-  font-size: 10rem;
+  font-size: 6.45rem;
+  font-family: 'NotoSans';
+  letter-spacing: 5px;
   padding: 0.5rem 0rem;
 }
 
 .realtime__date {
-  font-size: 4rem;
+  font-size: 3.5rem;
 }
 
 .realtime__day-of-week {
