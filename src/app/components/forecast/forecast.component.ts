@@ -17,7 +17,7 @@ export class ForecastComponent implements OnInit {
       if (this.timeout > 0) {
         clearTimeout(this.timeout);
       }
-      this.timeout = setTimeout(this.goHome.bind(this), 120000);
+      this.timeout = setTimeout(this.goHome.bind(this), 60000);
     } else if (page === 'list') {
       if (this.timeout > 0) {
         clearTimeout(this.timeout);
