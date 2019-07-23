@@ -14,8 +14,10 @@
 }
 
 .weather-now {
+  color: white;
+  position: relative;
+  z-index: 2;
   text-align: center;
-  font-family: 'Roboto Regular';
   font-size: 4.5rem;
 }
 

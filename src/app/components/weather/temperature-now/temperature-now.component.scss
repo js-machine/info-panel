@@ -1,3 +1,10 @@
+.weather {
+  margin-bottom: 2rem;
+  text-align: center;
+  font-family: 'NotoSans';
+  font-size: 5rem;
+}
+
 .weather-data__sys {
   display: flex;
   justify-content: center;
@@ -9,18 +16,13 @@
   }
 }
 
-.weather {
-  text-align: center;
-  font-family: 'Roboto Regular';
-  font-size: 6rem;
-}
-
 .weather__data > div {
   padding: 1rem 0rem;
 }
 
 .temperature__icon {
   position: relative;
+  top: -10px;
   left: 2rem;
 }
 

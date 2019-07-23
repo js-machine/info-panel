@@ -1,5 +1,6 @@
 <div class="forecast-page" (window:keydown.l)="changePage('list')" (window:keydown.h)="changePage('home')">
   <div class="forecast-page__info forecast-info">
+    <canvas #canvasEl></canvas>
     <info-weather-now></info-weather-now>
     <info-weather-forecast></info-weather-forecast>
   </div>
