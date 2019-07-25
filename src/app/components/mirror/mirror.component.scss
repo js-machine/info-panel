@@ -8,9 +8,9 @@
   background-image: url('assets/city.png');
 }
 
-.mirror-page__image_transform{
-  transform: scale(-1, 1);            /*For Firefox (& IE) */
-  -webkit-transform: scale(-1, 1); 
+.mirror-page__image_transform {
+  transform: scale(-1, 1); /*For Firefox (& IE) */
+  -webkit-transform: scale(-1, 1);
 }
 
 .mirror-page__header {
