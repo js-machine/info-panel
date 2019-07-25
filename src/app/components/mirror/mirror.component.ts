@@ -16,5 +16,5 @@ export class MirrorComponent implements OnInit {
     this.page = new PagesService(this.router);
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {}
 }

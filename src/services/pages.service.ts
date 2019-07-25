@@ -2,38 +2,37 @@ import { OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 
 export class PagesService implements OnDestroy {
-    timeout: any = 0;
+  timeout: any = 0;
 
-    constructor(private router: Router) { }
+  constructor(private router: Router) {}
 
-    change(page: string) {
-        if (page === 'home') {
-            if (this.timeout > 0) {
-                clearTimeout(this.timeout);
-            }
-            this.timeout = setTimeout(this.goHome.bind(this), 60000);
-        } else if (page === 'list') {
-            if (this.timeout > 0) {
-                clearTimeout(this.timeout);
-                this.timeout = 0;
-            } else {
-                this.goToAppList();
-            }
-        } else {
-            return;
-        }
-    }
-
-    ngOnDestroy() {
+  change(page: string) {
+    if (page === 'home') {
+      if (this.timeout > 0) {
         clearTimeout(this.timeout);
+      }
+      this.timeout = setTimeout(this.goHome.bind(this), 60000);
+    } else if (page === 'list') {
+      if (this.timeout > 0) {
+        clearTimeout(this.timeout);
+        this.timeout = 0;
+      } else {
+        this.goToAppList();
+      }
+    } else {
+      return;
     }
+  }
 
-    goToAppList(): void {
-        this.router.navigate(['/apps']);
-    }
+  ngOnDestroy() {
+    clearTimeout(this.timeout);
+  }
 
-    goHome(): void {
-        this.router.navigate(['/']);
-    }
+  goToAppList(): void {
+    this.router.navigate(['/apps']);
+  }
 
+  goHome(): void {
+    this.router.navigate(['/']);
+  }
 }

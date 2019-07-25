@@ -10,7 +10,7 @@ import { WeatherModel } from '../model/weather.model';
   styleUrls: ['./temperature-now.component.scss']
 })
 export class TemperatureComponent implements OnInit, OnDestroy {
-  constructor(private api: WeatherApiService) { }
+  constructor(private api: WeatherApiService) {}
 
   weather: WeatherModel;
   weather$: Observable<WeatherModel>;
