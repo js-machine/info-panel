@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { interval, Observable } from 'rxjs';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { interval, Observable, Subscription } from 'rxjs';
 import { flatMap } from 'rxjs/operators';
 import { WeatherApiService } from '../api/weather-api.service';
 import { WeatherModel } from '../model/weather.model';
@@ -9,11 +9,12 @@ import { WeatherModel } from '../model/weather.model';
   templateUrl: './weather-now.component.html',
   styleUrls: ['./weather-now.component.scss']
 })
-export class WeatherNowComponent implements OnInit {
+export class WeatherNowComponent implements OnInit, OnDestroy {
   constructor(private api: WeatherApiService) {}
 
   weather: WeatherModel;
   weather$: Observable<WeatherModel>;
+  private subscription: Subscription;
 
   ngOnInit() {
     this.api.getWeather().subscribe(weather => {
@@ -26,9 +27,13 @@ export class WeatherNowComponent implements OnInit {
       })
     );
 
-    this.weather$.subscribe(weather => {
+    this.subscription = this.weather$.subscribe(weather => {
       this.weather = weather;
     });
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
   getIconUrl(icon: string): string {

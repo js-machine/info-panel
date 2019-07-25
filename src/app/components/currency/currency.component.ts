@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { interval, Observable } from 'rxjs';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { interval, Observable, Subscription } from 'rxjs';
 import { flatMap } from 'rxjs/operators';
 import { CurrencyApiService } from './api/currency-api.service';
 import { CurrencyModel } from './model/currency.model';
@@ -9,7 +9,7 @@ import { CurrencyModel } from './model/currency.model';
   templateUrl: './currency.component.html',
   styleUrls: ['./currency.component.scss']
 })
-export class CurrencyComponent implements OnInit {
+export class CurrencyComponent implements OnInit, OnDestroy {
   readonly ASSETS_PATH = '../../../../assets/';
 
   private mapping: any;
@@ -24,6 +24,7 @@ export class CurrencyComponent implements OnInit {
 
   currencies: CurrencyModel[];
   currencies$: Observable<CurrencyModel[]>;
+  private subscription: Subscription;
 
   ngOnInit() {
     this.api.getCurrency().subscribe(values => {
@@ -36,9 +37,13 @@ export class CurrencyComponent implements OnInit {
       })
     );
 
-    this.currencies$.subscribe(currencies => {
+    this.subscription = this.currencies$.subscribe(currencies => {
       this.currencies = currencies;
     });
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
   getImagePath(currency: CurrencyModel): string {

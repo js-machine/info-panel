@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import playlistJSON from 'assets/video/playlist.json';
 import { Observable } from 'rxjs';
 import { VgAPI } from 'videogular2/core';
@@ -15,7 +15,7 @@ export interface Media {
   templateUrl: './myvideo.component.html',
   styleUrls: ['./myvideo.component.scss']
 })
-export class MyVideoComponent {
+export class MyVideoComponent implements OnDestroy {
   private _jsonURL = 'assets/video/playlist.json';
   private playlist: Media[] = playlistJSON;
   private currentIndex = 0;
@@ -44,11 +44,9 @@ export class MyVideoComponent {
     this.mediaPalyer = document.getElementById('singleVideo') as HTMLVideoElement;
   }
 
-  /* tslint:disable */
   public ngOnDestroy() {
     this.saveVideoTime();
   }
-  /* tslint:enable */
 
   private saveVideoTime() {
     if (this.mediaPalyer.currentTime !== 0) {

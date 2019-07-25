@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { PagesService } from '../../../services/pages.service';
 
 @Component({
   selector: 'app-forecast',
@@ -11,9 +12,11 @@ export class ForecastComponent implements OnInit {
   private context: CanvasRenderingContext2D;
   private width = 1080;
   private height = 1500;
-  timeout: any = 0;
+  private page;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
+    this.page = new PagesService(this.router);
+  }
 
   ngOnInit() {
     this.context = (this.canvasEl.nativeElement as HTMLCanvasElement).getContext('2d');
@@ -33,31 +36,5 @@ export class ForecastComponent implements OnInit {
 
     this.context.fillStyle = gradient;
     this.context.fillRect(0, 0, this.width, this.height);
-  }
-
-  changePage(page: string) {
-    if (page === 'home') {
-      if (this.timeout > 0) {
-        clearTimeout(this.timeout);
-      }
-      this.timeout = setTimeout(this.goHome.bind(this), 60000);
-    } else if (page === 'list') {
-      if (this.timeout > 0) {
-        clearTimeout(this.timeout);
-        this.timeout = 0;
-      } else {
-        this.goToAppList();
-      }
-    } else {
-      return;
-    }
-  }
-
-  goToAppList(): void {
-    this.router.navigate(['/apps']);
-  }
-
-  goHome(): void {
-    this.router.navigate(['/']);
   }
 }

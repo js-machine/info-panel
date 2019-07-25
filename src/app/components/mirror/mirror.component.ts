@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { PagesService } from '../../../services/pages.service';
 
 @Component({
   selector: 'mirror',
@@ -9,35 +10,11 @@ import { Router } from '@angular/router';
 export class MirrorComponent implements OnInit {
   public width = 1080;
   public height = 810;
-  timeout: any = 0;
+  private page;
 
-  constructor(private router: Router) {}
-
-  changePage(page: string) {
-    if (page === 'home') {
-      if (this.timeout > 0) {
-        clearTimeout(this.timeout);
-      }
-      this.timeout = setTimeout(this.goHome.bind(this), 60000);
-    } else if (page === 'list') {
-      if (this.timeout > 0) {
-        clearTimeout(this.timeout);
-        this.timeout = 0;
-      } else {
-        this.goToAppList();
-      }
-    } else {
-      return;
-    }
+  constructor(private router: Router) {
+    this.page = new PagesService(this.router);
   }
 
-  goToAppList(): void {
-    this.router.navigate(['/apps']);
-  }
-
-  goHome(): void {
-    this.router.navigate(['/']);
-  }
-
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 }

@@ -42,7 +42,7 @@ export class FacetrackComponent implements OnInit, OnDestroy {
               deviceId: { exact: cameras[i].deviceId },
               minAspectRatio: 1.333,
               maxAspectRatio: 1.334,
-              ыminFrameRate: 30
+              minFrameRate: 30
             }
           };
           this.videoStart(constraints);

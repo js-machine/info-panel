@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import Game from 'game-2048';
+import { PagesService } from '../../../services/pages.service';
 
 @Component({
   selector: 'game',
@@ -8,33 +9,10 @@ import Game from 'game-2048';
   styleUrls: ['./game.component.scss']
 })
 export class GameComponent implements OnInit {
-  constructor(private router: Router) {}
-  timeout: any = 0;
+  private page;
 
-  changePage(page: string) {
-    if (page === 'home') {
-      if (this.timeout > 0) {
-        clearTimeout(this.timeout);
-      }
-      this.timeout = setTimeout(this.goHome.bind(this), 60000);
-    } else if (page === 'list') {
-      if (this.timeout > 0) {
-        clearTimeout(this.timeout);
-        this.timeout = 0;
-      } else {
-        this.goToAppList();
-      }
-    } else {
-      return;
-    }
-  }
-
-  goToAppList(): void {
-    this.router.navigate(['/apps']);
-  }
-
-  goHome(): void {
-    this.router.navigate(['/']);
+  constructor(private router: Router) {
+    this.page = new PagesService(this.router);
   }
 
   ngOnInit(): void {
