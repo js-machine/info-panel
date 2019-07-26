@@ -1,6 +1,9 @@
-import { OnDestroy } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 
+@Injectable({
+  providedIn: 'root'
+})
 export class PagesService implements OnDestroy {
   timeout: any = 0;
 
@@ -16,9 +19,8 @@ export class PagesService implements OnDestroy {
       if (this.timeout > 0) {
         clearTimeout(this.timeout);
         this.timeout = 0;
-      } else {
-        this.goToAppList();
       }
+      this.goToAppList();
     } else {
       return;
     }

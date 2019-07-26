@@ -2,22 +2,18 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { interval, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { PagesService } from '../../../services/pages.service';
+import { PagesService } from '../../services/pages.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  providers: [PagesService]
 })
 export class HomeComponent implements OnInit {
   private mediaPalyer: HTMLVideoElement;
-  private page;
-
-  constructor(private router: Router) {
-    this.page = new PagesService(this.router);
-  }
-
   now$: Observable<Date>;
+  constructor(private page: PagesService) {}
 
   ngOnInit() {
     this.now$ = interval(1000).pipe(map(() => new Date()));

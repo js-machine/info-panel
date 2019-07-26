@@ -1,19 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import Game from 'game-2048';
-import { PagesService } from '../../../services/pages.service';
+import { PagesService } from '../../services/pages.service';
 
 @Component({
   selector: 'game',
   templateUrl: './game.component.html',
-  styleUrls: ['./game.component.scss']
+  styleUrls: ['./game.component.scss'],
+  providers: [PagesService]
 })
 export class GameComponent implements OnInit {
-  private page;
-
-  constructor(private router: Router) {
-    this.page = new PagesService(this.router);
-  }
+  constructor(private page: PagesService) {}
 
   ngOnInit(): void {
     const game = new Game({

@@ -1,22 +1,19 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
-import { PagesService } from '../../../services/pages.service';
+import { PagesService } from '../../services/pages.service';
 
 @Component({
   selector: 'app-forecast',
   templateUrl: './forecast.component.html',
-  styleUrls: ['./forecast.component.scss']
+  styleUrls: ['./forecast.component.scss'],
+  providers: [PagesService]
 })
 export class ForecastComponent implements OnInit {
   @ViewChild('canvasEl') canvasEl: ElementRef;
   private context: CanvasRenderingContext2D;
   private width = 1080;
   private height = 1500;
-  private page;
 
-  constructor(private router: Router) {
-    this.page = new PagesService(this.router);
-  }
+  constructor(private page: PagesService) {}
 
   ngOnInit() {
     this.context = (this.canvasEl.nativeElement as HTMLCanvasElement).getContext('2d');
