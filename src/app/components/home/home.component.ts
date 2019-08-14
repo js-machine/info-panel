@@ -1,19 +1,18 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
 import { interval, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { PagesService } from '../../services/pages.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  providers: [PagesService]
 })
 export class HomeComponent implements OnInit {
   private mediaPalyer: HTMLVideoElement;
-
-  constructor(private router: Router) {}
-
   now$: Observable<Date>;
+  constructor(private page: PagesService) {}
 
   ngOnInit() {
     this.now$ = interval(1000).pipe(map(() => new Date()));
@@ -24,15 +23,5 @@ export class HomeComponent implements OnInit {
     if (this.mediaPalyer.currentTime !== 0) {
       sessionStorage.setItem('videoTime', String(this.mediaPalyer.currentTime));
     }
-  }
-
-  goToAppList(): void {
-    this.saveVideoTime();
-    this.router.navigate(['/apps']);
-  }
-
-  goToForecast(): void {
-    this.saveVideoTime();
-    this.router.navigate(['/forecast']);
   }
 }

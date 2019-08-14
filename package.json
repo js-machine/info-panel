@@ -78,7 +78,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.13.9",
-    "@commitlint/cli": "^8.0.0",
+    "@commitlint/cli": "^8.1.0",
     "@commitlint/config-angular": "^8.0.0",
     "@commitlint/config-conventional": "^8.0.0",
     "@types/core-js": "^2.5.0",

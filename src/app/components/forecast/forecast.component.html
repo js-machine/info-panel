@@ -1,4 +1,4 @@
-<div class="forecast-page" (window:keydown.l)="goToAppList()" (window:keydown.h)="goHome()">
+<div class="forecast-page" (window:keydown.l)="page.change('list')" (window:keydown.h)="page.change('home')">
   <div class="forecast-page__info forecast-info">
     <canvas #canvasEl></canvas>
     <info-weather-now></info-weather-now>
@@ -7,7 +7,7 @@
 
   <div class="forecast-page__controls page-controls">
     <div class="page-controls__space"></div>
-    <div class="page-controls__apps" (click)="goToAppList()">
+    <div class="page-controls__apps" (click)="page.goToAppList()">
       <i class="material-icons">apps</i>
     </div>
   </div>
