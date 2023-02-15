@@ -9,7 +9,7 @@ import { PagesService } from '../../services/pages.service';
   providers: [PagesService]
 })
 export class GameComponent implements OnInit {
-  constructor(private page: PagesService) {}
+  constructor(public page: PagesService) {}
 
   ngOnInit(): void {
     const game = new Game({

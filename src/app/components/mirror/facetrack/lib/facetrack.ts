@@ -164,7 +164,7 @@ export class FaceTracker {
     this._defor.init(this._webglCanvas);
 
     this._pnums = this._faceModel.model().shapeModel.eigenValues.length - 2;
-    this._ph = new this.parameterHolder();
+    this._ph = this.parameterHolder();
 
     for (let i = 0; i < this._pnums; i++) {
       this._ph['component ' + (i + 3)] = this._presets['unwell'][i];
@@ -241,6 +241,8 @@ export class FaceTracker {
     for (let i = 0; i < this._pnums; i++) {
       this['component ' + (i + 3)] = 0;
     }
+
+    return this;
   };
 
   public switchDeformedFace = value => {

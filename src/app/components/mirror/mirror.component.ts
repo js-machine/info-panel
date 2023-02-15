@@ -11,7 +11,7 @@ export class MirrorComponent implements OnInit {
   public width = 1080;
   public height = 810;
 
-  constructor(private page: PagesService) {}
+  constructor(public page: PagesService) {}
 
   ngOnInit(): void {}
 }

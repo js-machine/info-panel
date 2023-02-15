@@ -8,14 +8,18 @@ import { PagesService } from '../../services/pages.service';
   providers: [PagesService]
 })
 export class ForecastComponent implements OnInit {
-  @ViewChild('canvasEl') canvasEl: ElementRef;
+  @ViewChild('canvasEl', {read: ElementRef}) canvasEl: ElementRef;
   private context: CanvasRenderingContext2D;
   private width = 1080;
   private height = 1500;
 
-  constructor(private page: PagesService) {}
+  constructor(public page: PagesService) {}
 
   ngOnInit() {
+
+  }
+
+  ngAfterViewInit(): void {
     this.context = (this.canvasEl.nativeElement as HTMLCanvasElement).getContext('2d');
 
     this.canvasEl.nativeElement.width = this.width;
@@ -23,6 +27,7 @@ export class ForecastComponent implements OnInit {
 
     this.draw();
   }
+
 
   draw() {
     // Create a linear gradient

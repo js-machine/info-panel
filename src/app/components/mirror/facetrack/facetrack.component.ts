@@ -51,7 +51,6 @@ export class FacetrackComponent implements OnInit, OnDestroy {
     });
   }
 
-  /* tslint:disable */
   public ngOnDestroy() {
     this.track.clmStop();
   }
@@ -59,30 +58,18 @@ export class FacetrackComponent implements OnInit, OnDestroy {
   public ngAfterViewInit() {
     this.clmtrackr();
   }
-  /* tslint:enable */
 
   private videoStart(constraints: any) {
     const video = this.hardwareVideo.nativeElement;
-    const promise = new Promise<MediaStream>((resolve, reject) => {
-      navigator.getUserMedia(
-        constraints,
-        (stream: MediaStream | PromiseLike<MediaStream>) => {
-          resolve(stream);
-        },
-        (err: any) => reject(err)
-      );
-    })
-      .then(stream => {
-        if ('srcObject' in video) {
-          video.srcObject = stream;
-        } else {
-          video.src = window.URL.createObjectURL(stream);
-        }
+    navigator.mediaDevices.getUserMedia(constraints)
+    .then((stream: MediaStream) => {
+        video.srcObject = stream;
         video.onloadedmetadata = (e: any) => {
+          console.log(video);
           video.play();
-        };
-      })
-      .catch(this.logError);
+        }
+    })
+    .catch(this.logError);
   }
 
   private clmtrackr() {

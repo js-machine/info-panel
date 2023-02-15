@@ -10,7 +10,7 @@ import { currencyDtoToModel } from './dto-converter';
   providedIn: 'root'
 })
 export class CurrencyApiService {
-  readonly API_URL = 'http://www.nbrb.by/API/ExRates/Rates?Periodicity=0';
+  readonly API_URL = 'https://www.nbrb.by/API/ExRates/Rates?Periodicity=0';
 
   constructor(private httpClient: HttpClient) {}
 

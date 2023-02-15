@@ -10,18 +10,18 @@ import { PagesService } from '../../services/pages.service';
   providers: [PagesService]
 })
 export class HomeComponent implements OnInit {
-  private mediaPalyer: HTMLVideoElement;
+  private mediaPlayer: HTMLVideoElement;
   now$: Observable<Date>;
-  constructor(private page: PagesService) {}
+  constructor(public page: PagesService) { }
 
   ngOnInit() {
     this.now$ = interval(1000).pipe(map(() => new Date()));
-    this.mediaPalyer = document.getElementById('singleVideo') as HTMLVideoElement;
+    this.mediaPlayer = document.getElementById('singleVideo') as HTMLVideoElement;
   }
 
   saveVideoTime() {
-    if (this.mediaPalyer.currentTime !== 0) {
-      sessionStorage.setItem('videoTime', String(this.mediaPalyer.currentTime));
+    if (this.mediaPlayer.currentTime !== 0) {
+      sessionStorage.setItem('videoTime', String(this.mediaPlayer.currentTime));
     }
   }
 }
