@@ -173,7 +173,11 @@ export class WebGLUtils {
     }
     if (optAttribs) {
       for (let i = 0; i < optAttribs.length; ++i) {
-        gl.bindAttribLocation(program, optLocations ? optLocations[i] : i, optAttribs[i]);
+        gl.bindAttribLocation(
+          program,
+          optLocations ? optLocations[i] : i,
+          optAttribs[i]
+        );
       }
     }
     /* tslint:enable */
@@ -192,7 +196,12 @@ export class WebGLUtils {
     return program;
   }
 
-  public createShaderFromScript(gl, scriptId, optShaderType, optErrorCallback): any {
+  public createShaderFromScript(
+    gl,
+    scriptId,
+    optShaderType,
+    optErrorCallback
+  ): any {
     let shaderSource = '';
     let shaderType;
     const shaderScript = document.getElementById(scriptId) as HTMLScriptElement;
@@ -206,12 +215,20 @@ export class WebGLUtils {
         shaderType = gl.VERTEX_SHADER;
       } else if (shaderScript.type === 'x-shader/x-fragment') {
         shaderType = gl.FRAGMENT_SHADER;
-      } else if (shaderType !== gl.VERTEX_SHADER && shaderType !== gl.FRAGMENT_SHADER) {
+      } else if (
+        shaderType !== gl.VERTEX_SHADER &&
+        shaderType !== gl.FRAGMENT_SHADER
+      ) {
         throw new Error('*** Error: unknown shader type');
       }
     }
 
-    return this.loadShader(gl, shaderSource, optShaderType || shaderType, optErrorCallback);
+    return this.loadShader(
+      gl,
+      shaderSource,
+      optShaderType || shaderType,
+      optErrorCallback
+    );
   }
   // --END WEBGL_UTILS.TS
 }

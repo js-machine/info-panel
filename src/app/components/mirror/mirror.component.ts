@@ -5,7 +5,7 @@ import { PagesService } from '../../services/pages.service';
   selector: 'mirror',
   templateUrl: './mirror.component.html',
   styleUrls: ['./mirror.component.scss'],
-  providers: [PagesService]
+  providers: [PagesService],
 })
 export class MirrorComponent implements OnInit {
   public width = 1080;

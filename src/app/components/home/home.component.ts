@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { interval, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { PagesService } from '../../services/pages.service';
@@ -7,16 +7,19 @@ import { PagesService } from '../../services/pages.service';
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  providers: [PagesService]
+  providers: [PagesService],
 })
 export class HomeComponent implements OnInit {
-  private mediaPlayer: HTMLVideoElement;
   now$: Observable<Date>;
-  constructor(public page: PagesService) { }
+  private mediaPlayer: HTMLVideoElement;
+
+  constructor(public page: PagesService) {}
 
   ngOnInit() {
     this.now$ = interval(1000).pipe(map(() => new Date()));
-    this.mediaPlayer = document.getElementById('singleVideo') as HTMLVideoElement;
+    this.mediaPlayer = document.getElementById(
+      'singleVideo'
+    ) as HTMLVideoElement;
   }
 
   saveVideoTime() {

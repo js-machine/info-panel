@@ -7,17 +7,17 @@ import { WeatherModel } from '../model/weather.model';
 @Component({
   selector: 'temperature-now',
   templateUrl: './temperature-now.component.html',
-  styleUrls: ['./temperature-now.component.scss']
+  styleUrls: ['./temperature-now.component.scss'],
 })
 export class TemperatureComponent implements OnInit, OnDestroy {
-  constructor(private api: WeatherApiService) {}
-
   weather: WeatherModel;
   weather$: Observable<WeatherModel>;
   private subscription: Subscription;
 
+  constructor(private api: WeatherApiService) {}
+
   ngOnInit() {
-    this.api.getWeather().subscribe(weather => {
+    this.api.getWeather().subscribe((weather) => {
       this.weather = weather;
     });
 
@@ -27,7 +27,7 @@ export class TemperatureComponent implements OnInit, OnDestroy {
       })
     );
 
-    this.subscription = this.weather$.subscribe(weather => {
+    this.subscription = this.weather$.subscribe((weather) => {
       this.weather = weather;
     });
   }

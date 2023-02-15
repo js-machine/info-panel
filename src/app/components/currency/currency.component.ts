@@ -7,27 +7,25 @@ import { CurrencyModel } from './model/currency.model';
 @Component({
   selector: 'info-currency',
   templateUrl: './currency.component.html',
-  styleUrls: ['./currency.component.scss']
+  styleUrls: ['./currency.component.scss'],
 })
 export class CurrencyComponent implements OnInit, OnDestroy {
   readonly ASSETS_PATH = '../../../../assets/';
-
+  currencies: CurrencyModel[];
+  currencies$: Observable<CurrencyModel[]>;
+  private subscription: Subscription;
   private mapping: any;
 
   constructor(private api: CurrencyApiService) {
     this.mapping = {
       USD: 'usa',
       EUR: 'eu',
-      RUB: 'rus'
+      RUB: 'rus',
     };
   }
 
-  currencies: CurrencyModel[];
-  currencies$: Observable<CurrencyModel[]>;
-  private subscription: Subscription;
-
   ngOnInit() {
-    this.api.getCurrency().subscribe(values => {
+    this.api.getCurrency().subscribe((values) => {
       this.currencies = values;
     });
 
@@ -37,7 +35,7 @@ export class CurrencyComponent implements OnInit, OnDestroy {
       })
     );
 
-    this.subscription = this.currencies$.subscribe(currencies => {
+    this.subscription = this.currencies$.subscribe((currencies) => {
       this.currencies = currencies;
     });
   }

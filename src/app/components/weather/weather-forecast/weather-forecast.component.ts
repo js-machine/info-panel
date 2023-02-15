@@ -7,17 +7,17 @@ import { ForecastModel } from '../model/forecast.model';
 @Component({
   selector: 'info-weather-forecast',
   templateUrl: './weather-forecast.component.html',
-  styleUrls: ['./weather-forecast.component.scss']
+  styleUrls: ['./weather-forecast.component.scss'],
 })
 export class WeatherForecastComponent implements OnInit, OnDestroy {
-  constructor(private api: WeatherApiService) {}
-
   forecast: ForecastModel[];
   forecast$: Observable<ForecastModel[]>;
   private subscription: Subscription;
 
+  constructor(private api: WeatherApiService) {}
+
   ngOnInit() {
-    this.api.getForecast().subscribe(forecast => {
+    this.api.getForecast().subscribe((forecast) => {
       this.forecast = forecast;
     });
 
@@ -27,7 +27,7 @@ export class WeatherForecastComponent implements OnInit, OnDestroy {
       })
     );
 
-    this.subscription = this.forecast$.subscribe(forecast => {
+    this.subscription = this.forecast$.subscribe((forecast) => {
       this.forecast = forecast;
     });
   }

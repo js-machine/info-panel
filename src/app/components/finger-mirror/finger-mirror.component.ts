@@ -1,9 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'finger-mirror',
   templateUrl: './finger-mirror.component.html',
-  styleUrls: ['./finger-mirror.component.scss']
+  styleUrls: ['./finger-mirror.component.scss'],
 })
-export class FingerMirrorComponent {
-}
+export class FingerMirrorComponent {}
