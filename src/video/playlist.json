@@ -1,0 +1,14 @@
+[
+  {
+    "title": "STRIM",
+    "src": "./video/1.mp4",
+    "type": "video/mp4",
+    "fullscreen": false
+  },
+  {
+    "title": "Mogilev2",
+    "src": "./video/2.mp4",
+    "type": "video/mp4",
+    "fullscreen": true
+  }
+]

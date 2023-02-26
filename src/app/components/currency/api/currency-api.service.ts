@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
 import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { CurrencyModel } from '../model/currency.model';
@@ -10,7 +9,7 @@ import { currencyDtoToModel } from './dto-converter';
   providedIn: 'root'
 })
 export class CurrencyApiService {
-  readonly API_URL = 'https://www.instagram.com/fly.belarus';
+  readonly API_URL = 'https://www.nbrb.by/API/ExRates/Rates?Periodicity=0';
 
   constructor(private httpClient: HttpClient) {}
 

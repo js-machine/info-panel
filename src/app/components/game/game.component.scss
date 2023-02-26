@@ -6,7 +6,12 @@
   flex-direction: column;
   overflow: hidden;
   font-family: Roboto Regular;
-  background-image: url('assets/city.png');
+  background-image: url('../../../assets/city.png');
+}
+
+.game-page__wrap{
+  padding-top: 280px; 
+  transform: scale(2);
 }
 
 .game-page__controls {
@@ -25,3 +30,4 @@
     cursor: pointer;
   }
 }
+

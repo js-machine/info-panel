@@ -1,5 +1,8 @@
 .weather {
   margin-bottom: 2rem;
+  text-align: center;
+  font-family: 'NotoSans';
+  font-size: 5rem;
 }
 
 .weather-data__sys {
@@ -11,16 +14,6 @@
   img {
     height: 2rem;
   }
-}
-
-.weather {
-  text-align: center;
-  font-family: 'NotoSans';
-  font-size: 5rem;
-}
-
-.weather__data > div {
-  padding: 1rem 0rem;
 }
 
 .temperature__icon {

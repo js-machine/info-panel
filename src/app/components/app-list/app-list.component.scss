@@ -5,11 +5,11 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  background-image: url('assets/city.png');
+  background-image: url('../../../assets/city.png');
 }
 
 .app-list__panel {
-  height: 85%;
+  flex: 1;
 }
 
 .app-list__panel {
@@ -34,10 +34,8 @@
 }
 
 .app-list__cameraview {
-  position: fixed;
-  bottom: 0;
   width: 100%;
-  height: 13%;
+  height: 13.6rem;
   display: flex;
   flex-grow: 0;
   justify-content: center;

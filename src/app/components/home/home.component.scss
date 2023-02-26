@@ -5,13 +5,13 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  background-image: url('assets/city.png');
+  background-image: url('../../../assets/city.png');
 }
 
 .home-info__city {
   text-align: center;
-  font-size: 7rem;
-  margin-top: 35px;
+  font-size: 10rem;
+  margin-top: 25px;
   margin-bottom: 0.5rem;
 }
 
@@ -43,7 +43,7 @@
 
 .home-page__logo {
   position: fixed;
-  bottom: 18rem;
+  bottom: 15rem;
   height: 15%;
   width: 100%;
   overflow: hidden;

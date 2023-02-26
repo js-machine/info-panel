@@ -66,7 +66,7 @@ export class FaceTracker {
     [56, 57, 60, 56],
     [57, 59, 60, 57],
     [57, 58, 59, 57],
-    [50, 58, 59, 50]
+    [50, 58, 59, 50],
   ];
 
   private _extendVertices = [
@@ -115,10 +115,15 @@ export class FaceTracker {
     [20, 91, 19, 20],
     [91, 90, 19, 91],
     [19, 90, 71, 19],
-    [19, 71, 0, 19]
+    [19, 71, 0, 19],
   ];
 
-  constructor(video: ElementRef, overlay: ElementRef, webgl: ElementRef, videoReady: boolean) {
+  constructor(
+    video: ElementRef,
+    overlay: ElementRef,
+    webgl: ElementRef,
+    videoReady: boolean
+  ) {
     this._video = video;
     this._overlay = overlay;
     this._webgl = webgl;
@@ -129,7 +134,7 @@ export class FaceTracker {
     this._videoCanvas.width = this._vid_width;
     this._videoCanvas.height = this._vid_height;
     //////////////////////////////
-    this._clm = new clm.tracker({ searchWindow: 14 });
+    this._clm = new clm.tracker({ useWebGL: true, searchWindow: 14 });
     this._defor = new FaceDeformer();
     this._faceModel = new FaceModel();
 
@@ -144,7 +149,7 @@ export class FaceTracker {
       aloof: [0, 0, 0, 0, 0, 0, 0, -8, 0, 0, 0, 0, 0, 0, -2, 0, 0, 10],
       evil: [0, 0, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, -8],
       artificial: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 0, -16, 0, 0, 0, 0, 0],
-      none: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      none: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     };
   }
 
@@ -164,7 +169,7 @@ export class FaceTracker {
     this._defor.init(this._webglCanvas);
 
     this._pnums = this._faceModel.model().shapeModel.eigenValues.length - 2;
-    this._ph = new this.parameterHolder();
+    this._ph = this.parameterHolder();
 
     for (let i = 0; i < this._pnums; i++) {
       this._ph['component ' + (i + 3)] = this._presets['unwell'][i];
@@ -197,7 +202,15 @@ export class FaceTracker {
   };
 
   private drawMaskLoop = () => {
-    this._videoCanvas.getContext('2d').drawImage(this._video.nativeElement, 0, 0, this._vid_width, this._vid_height);
+    this._videoCanvas
+      .getContext('2d')
+      .drawImage(
+        this._video.nativeElement,
+        0,
+        0,
+        this._vid_width,
+        this._vid_height
+      );
     const pos = this._clm.getCurrentPosition();
 
     if (pos) {
@@ -215,10 +228,17 @@ export class FaceTracker {
       // merge with pos
       let newPos = pos.concat(addPos);
 
-      let newVertices = this._faceModel.model().path.vertices.concat(this._mouth_vertices);
+      let newVertices = this._faceModel
+        .model()
+        .path.vertices.concat(this._mouth_vertices);
       // merge with newVertices
       newVertices = newVertices.concat(this._extendVertices);
-      this._defor.load(this._videoCanvas, newPos, this._faceModel.model, newVertices);
+      this._defor.load(
+        this._videoCanvas,
+        newPos,
+        this._faceModel.model,
+        newVertices
+      );
       /* tslint:disable */
       let parameters = this._clm.getCurrentParameters();
       for (let i = 6; i < parameters.length; i++) {
@@ -241,9 +261,11 @@ export class FaceTracker {
     for (let i = 0; i < this._pnums; i++) {
       this['component ' + (i + 3)] = 0;
     }
+
+    return this;
   };
 
-  public switchDeformedFace = value => {
+  public switchDeformedFace = (value) => {
     for (let i = 0; i < this._pnums; i++) {
       this._ph['component ' + (i + 3)] = this._presets[value][i];
     }

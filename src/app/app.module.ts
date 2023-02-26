@@ -2,7 +2,8 @@ import { registerLocaleData } from '@angular/common';
 import localeRu from '@angular/common/locales/ru';
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { MatGridListModule, MatIconModule } from '@angular/material';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatIconModule } from '@angular/material/icon';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -24,10 +25,10 @@ import { MirrorModule } from './components/mirror/mirror.module';
     HomeModule,
     MatIconModule,
     MatGridListModule,
-    MirrorModule
+    MirrorModule,
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'ru' }],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
 

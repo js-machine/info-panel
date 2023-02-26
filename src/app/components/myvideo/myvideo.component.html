@@ -2,7 +2,7 @@
   <vg-player (onPlayerReady)="onPlayerReady($event)">
     <video
       #media
-      [vgMedia]="media"
+      [vgMedia]="$any(media)"
       [src]="currentItem.src"
       id="singleVideo"
       preload="auto"

@@ -1,22 +1,26 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
+import { PagesService } from '../../services/pages.service';
 
 @Component({
   selector: 'app-forecast',
   templateUrl: './forecast.component.html',
-  styleUrls: ['./forecast.component.scss']
+  styleUrls: ['./forecast.component.scss'],
+  providers: [PagesService],
 })
 export class ForecastComponent implements OnInit {
-  @ViewChild('canvasEl') canvasEl: ElementRef;
-
+  @ViewChild('canvasEl', { read: ElementRef }) canvasEl: ElementRef;
   private context: CanvasRenderingContext2D;
   private width = 1080;
   private height = 1500;
 
-  constructor(private router: Router) {}
+  constructor(public page: PagesService) {}
 
-  ngOnInit() {
-    this.context = (this.canvasEl.nativeElement as HTMLCanvasElement).getContext('2d');
+  ngOnInit() {}
+
+  ngAfterViewInit(): void {
+    this.context = (
+      this.canvasEl.nativeElement as HTMLCanvasElement
+    ).getContext('2d');
 
     this.canvasEl.nativeElement.width = this.width;
     this.canvasEl.nativeElement.height = this.height;
@@ -33,13 +37,5 @@ export class ForecastComponent implements OnInit {
 
     this.context.fillStyle = gradient;
     this.context.fillRect(0, 0, this.width, this.height);
-  }
-
-  goToAppList(): void {
-    this.router.navigate(['/apps']);
-  }
-
-  goHome(): void {
-    this.router.navigate(['/']);
   }
 }

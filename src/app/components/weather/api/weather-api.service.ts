@@ -7,7 +7,7 @@ import { WeatherModel } from '../model/weather.model';
 import { forecastDtoToModel, weatherDtoToModel } from './dto-converter';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class WeatherApiService {
   readonly API_URL = 'http://api.openweathermap.org';
@@ -18,9 +18,12 @@ export class WeatherApiService {
 
   getWeather(): Observable<WeatherModel | null> {
     return this.httpClient
-      .jsonp(`${this.API_URL}/data/2.5/weather?id=${this.CITY_ID}&units=metric&APPID=${this.APP_ID}`, 'callback')
+      .jsonp(
+        `${this.API_URL}/data/2.5/weather?id=${this.CITY_ID}&units=metric&APPID=${this.APP_ID}`,
+        'callback'
+      )
       .pipe(
-        map(weatherDto => weatherDtoToModel(weatherDto)),
+        map((weatherDto) => weatherDtoToModel(weatherDto)),
         catchError(() => {
           console.log('Weather loading failed!');
           return of(null);
@@ -35,7 +38,7 @@ export class WeatherApiService {
         'callback'
       )
       .pipe(
-        map(forecastDto => forecastDtoToModel(forecastDto)),
+        map((forecastDto) => forecastDtoToModel(forecastDto)),
         catchError(() => {
           console.log('Forecast loading failed!');
           return of(null);

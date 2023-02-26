@@ -1,16 +1,9 @@
 /* SystemJS module definition */
-declare var nodeModule: NodeModule;
+declare const nodeModule: NodeModule;
 interface NodeModule {
   id: string;
 }
-
-declare var window: Window;
 interface Window {
   process: any;
   require: any;
-}
-
-declare module '*.json' {
-  const value: any;
-  export default value;
 }
