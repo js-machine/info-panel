@@ -1,5 +1,5 @@
 <div class="game-page" (window:keydown.l)="page.change('list')" (window:keydown.h)="page.change('home')">
-  <div id="game-container" style="padding-top: 280px; transform: scale(2)" class="container"></div>
+  <div id="game-container" class="container game-page__wrap"></div>
   <div class="game-page__controls page-controls">
     <div class="page-controls__space"></div>
     <div class="page-controls__apps" (click)="page.goToAppList()">

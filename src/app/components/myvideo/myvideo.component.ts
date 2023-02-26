@@ -66,15 +66,6 @@ export class MyVideoComponent implements OnDestroy {
     }
   }
 
-  // private setFullScreen() {
-  //   if (this.currentItem.fullscreen && this.api.fsAPI.isFullscreen){
-  //     this.api.fsAPI.toggleFullscreen();
-  //   }
-  //   else if (this.api.fsAPI.isAvailable && !this.api.fsAPI.isFullscreen && this.currentItem.fullscreen) {
-  //     this.api.fsAPI.toggleFullscreen();
-  //   }
-  // }
-
   nextVideo() {
     if (this.currentItem.fullscreen && this.api.fsAPI.isFullscreen){
       this.api.fsAPI.toggleFullscreen();

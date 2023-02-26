@@ -10,7 +10,7 @@ import { CurrencyModel } from './model/currency.model';
   styleUrls: ['./currency.component.scss'],
 })
 export class CurrencyComponent implements OnInit, OnDestroy {
-  readonly ASSETS_PATH = '../../../../assets/';
+  readonly HOUR_1 = 3600000;
   currencies: CurrencyModel[];
   currencies$: Observable<CurrencyModel[]>;
   private subscription: Subscription;
@@ -29,7 +29,7 @@ export class CurrencyComponent implements OnInit, OnDestroy {
       this.currencies = values;
     });
 
-    this.currencies$ = interval(3600000).pipe(
+    this.currencies$ = interval(this.HOUR_1).pipe(
       flatMap(() => {
         return this.api.getCurrency();
       })

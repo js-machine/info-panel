@@ -9,6 +9,11 @@
   background-image: url('../../../assets/city.png');
 }
 
+.game-page__wrap{
+  padding-top: 280px; 
+  transform: scale(2);
+}
+
 .game-page__controls {
   position: fixed;
   bottom: 0;
